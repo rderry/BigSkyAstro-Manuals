@@ -6,6 +6,56 @@
   <title>BigSkyAstro Feedback</title>
   <style>
     :root{--bg:#050812;--panel:rgba(8,15,31,.82);--field:rgba(255,255,255,.94);--ink:#f8fbff;--muted:rgba(248,251,255,.76);--line:rgba(255,218,95,.32);--gold:#ffdc55;--text-dark:#10213a}*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:"Aptos","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:linear-gradient(90deg,rgba(5,8,18,.94),rgba(5,8,18,.82) 48%,rgba(5,8,18,.62)),url("assets/veil-background-soft-20260605.png") center/cover fixed,var(--bg);line-height:1.55}.wrap{max-width:1120px;margin:0 auto;padding:42px 20px 64px}.topline{display:flex;justify-content:space-between;gap:18px;align-items:center;margin-bottom:54px}.brand{margin:0;color:var(--gold);font-weight:900}.nav{display:flex;gap:14px;flex-wrap:wrap}.nav a{color:var(--muted);text-decoration:none;font-weight:800}.nav a[aria-current=page]{color:var(--gold)}.layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(420px,1.1fr);gap:28px;align-items:start}h1{margin:0;max-width:620px;font-size:clamp(2.7rem,6vw,5.4rem);line-height:.96}.lede{margin:18px 0 0;max-width:560px;color:var(--muted);font-size:1.1rem}.summary{display:grid;gap:12px;margin-top:28px;max-width:560px}.summary div,.form-card{border:1px solid var(--line);background:rgba(8,15,31,.56);border-radius:8px;backdrop-filter:blur(12px)}.summary div{padding:14px 16px}.summary strong{display:block;color:var(--gold);margin-bottom:3px}.summary span{color:var(--muted);font-size:.95rem}.form-card{box-shadow:0 28px 90px rgba(0,0,0,.42);padding:24px}.form-card h2{margin:0 0 6px;color:var(--gold);font-size:1.6rem}.form-card p{margin:0 0 18px;color:var(--muted)}form{display:grid;gap:14px}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:grid;gap:7px;font-weight:800;font-size:.92rem}.label-text{color:var(--muted)}input,select,textarea{width:100%;border:1px solid rgba(16,33,58,.18);border-radius:8px;background:var(--field);color:var(--text-dark);font:inherit;padding:12px 13px;outline:none}textarea{min-height:150px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(255,220,85,.26)}.check{display:flex;gap:9px;align-items:flex-start;color:var(--muted);font-size:.94rem;font-weight:700}.check input{width:auto;margin-top:4px;accent-color:var(--gold)}button{border:0;border-radius:8px;background:linear-gradient(135deg,#ffe778,#ffc22f 46%,#c98105);color:#10131c;font-weight:900;font-size:1rem;padding:13px 18px;cursor:pointer;box-shadow:0 16px 34px rgba(255,194,47,.24)}.fine-print{margin-top:16px;color:rgba(248,251,255,.62);font-size:.86rem}@media(max-width:860px){.topline,.layout{display:block}.nav{margin-top:12px}.intro{margin-bottom:28px}.grid-2{grid-template-columns:1fr}}
+
+    .topline {
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      margin: 0 !important;
+      padding: 12px max(20px, calc((100vw - 1120px) / 2 + 20px));
+      background: rgba(5, 8, 18, 0.84);
+      border-bottom: 1px solid rgba(255, 218, 95, 0.22);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .topline .nav {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      max-width: 100%;
+      padding-bottom: 2px;
+      scrollbar-width: thin;
+    }
+
+    .topline .nav a {
+      white-space: nowrap;
+    }
+
+    .wrap {
+      padding-top: 112px !important;
+    }
+
+    @media (max-width: 760px) {
+      .topline {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 8px;
+        padding: 10px 16px;
+      }
+
+      .topline .nav {
+        width: 100%;
+      }
+
+      .wrap {
+        padding-top: 152px !important;
+      }
+    }
+
   </style>
 </head>
 <body>
