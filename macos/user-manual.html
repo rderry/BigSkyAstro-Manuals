@@ -27,7 +27,7 @@
       color: var(--ink);
       background:
         linear-gradient(180deg, rgba(7, 17, 31, 0.84), rgba(36, 64, 104, 0.62) 32%, rgba(244, 248, 252, 0.96) 72%),
-        url("../assets/veil-background-soft-20260605.png") center top / cover fixed,
+        url("../assets/veil-background-dark-20260605.png") center top / cover fixed,
         var(--bg);
       line-height: 1.58;
     }
@@ -235,15 +235,18 @@
 <body>
   <div class="wrap">
     <header>
-      <nav aria-label="Manual navigation">
-        <a href="../index.html">Manual home</a>
-        <a href="../ios/user-manual.html">iOS manual</a>
-        <a href="#quick-start">Quick start</a>
-        <a href="#locations">Locations</a>
-        <a href="#equipment">Equipment</a>
-        <a href="#targets">Target database</a>
-        <a href="#planning">Plan observation</a>
-      </nav>
+      <div class="topline">
+        <p class="brand">BigSkyAstro</p>
+        <nav class="nav" aria-label="Manual navigation">
+          <a href="../index.html">Manual home</a>
+          <a href="../ios/user-manual.html">iOS manual</a>
+          <a href="#quick-start">Quick start</a>
+          <a href="#locations">Locations</a>
+          <a href="#equipment">Equipment</a>
+          <a href="#targets">Target database</a>
+          <a href="#planning">Plan observation</a>
+        </nav>
+      </div>
       <p class="kicker">macOS Beta Manual</p>
       <h1>Astronomy Observation Planner</h1>
       <p class="lede">Desktop guide for the macOS beta build. This manual is separate from the iPhone and iPad manual because the Mac app uses a wider workspace, desktop action buttons, pop-up editing windows, and Mac-specific privacy, location, export, and review behavior.</p>
