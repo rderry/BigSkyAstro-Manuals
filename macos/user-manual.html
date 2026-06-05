@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astronomy Observation Planner macOS Beta Manual</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(247, 250, 255, 0.97);
+      --soft: rgba(233, 241, 252, 0.97);
+      --ink: #111827;
+      --muted: #536071;
+      --line: rgba(122, 144, 176, 0.38);
+      --blue: #295ea8;
+      --gold: #f7c948;
+      --green: #1a7f52;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(7, 17, 31, 0.84), rgba(36, 64, 104, 0.62) 32%, rgba(244, 248, 252, 0.96) 72%),
+        url("../ios/assets/manual-cover-background.jpeg") center top / cover fixed,
+        var(--bg);
+      line-height: 1.58;
+    }
+
+    a { color: var(--blue); }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 20px 72px;
+    }
+
+    header {
+      color: white;
+      padding: 20px 0 32px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    nav a {
+      color: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 999px;
+      padding: 7px 12px;
+      text-decoration: none;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.25rem, 5.8vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .lede {
+      max-width: 860px;
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1.08rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .meta span {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: rgba(255, 255, 255, 0.10);
+      color: rgba(255, 255, 255, 0.88);
+      font-weight: 800;
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 26px;
+      box-shadow: 0 18px 58px rgba(15, 23, 42, 0.14);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: var(--blue);
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: #244a7f;
+      font-size: 1.06rem;
+    }
+
+    p { margin: 0 0 12px; }
+
+    ul, ol {
+      margin: 8px 0 0 1.25rem;
+      padding: 0;
+    }
+
+    li { margin: 7px 0; }
+
+    .callout {
+      background: #fff8d8;
+      border: 1px solid rgba(247, 201, 72, 0.58);
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 16px 0;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .step {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 5px;
+    }
+
+    code {
+      background: #eef3fb;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+      white-space: nowrap;
+    }
+
+    footer {
+      color: rgba(255, 255, 255, 0.72);
+      margin-top: 24px;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 820px) {
+      .workflow { grid-template-columns: 1fr; }
+      section { padding: 21px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <nav aria-label="Manual navigation">
+        <a href="../index.html">Manual home</a>
+        <a href="../ios/user-manual.html">iOS manual</a>
+        <a href="#quick-start">Quick start</a>
+        <a href="#locations">Locations</a>
+        <a href="#equipment">Equipment</a>
+        <a href="#targets">Target database</a>
+        <a href="#planning">Plan observation</a>
+      </nav>
+      <p class="kicker">macOS Beta Manual</p>
+      <h1>Astronomy Observation Planner</h1>
+      <p class="lede">Desktop guide for the macOS beta build. This manual is separate from the iPhone and iPad manual because the Mac app uses a wider workspace, desktop action buttons, pop-up editing windows, and Mac-specific privacy, location, export, and review behavior.</p>
+      <div class="meta">
+        <span>Version 1.1 Beta</span>
+        <span>Build 4</span>
+        <span>macOS</span>
+        <span>BigSkyAstro</span>
+      </div>
+    </header>
+
+    <main>
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>Astronomy Observation Planner helps Mac users prepare a focused observing session: accept internet and privacy terms, set an observing location, choose telescope equipment and accessories, filter visible targets, plan observation windows, and export or review the session plan.</p>
+        <p>The macOS app is currently a beta build. The workflow is designed around one desktop workspace rather than the mobile tab shell used by the iOS app.</p>
+        <div class="workflow" aria-label="macOS workflow">
+          <div class="step"><strong>1. Consent</strong>Accept privacy, internet, and location-use information on first launch.</div>
+          <div class="step"><strong>2. Location</strong>Create or select a default observing site.</div>
+          <div class="step"><strong>3. Equipment</strong>Choose the visible telescope and one or more compatible accessories.</div>
+          <div class="step"><strong>4. Plan</strong>Filter targets, block sky areas, assign observing times, and review the plan.</div>
+        </div>
+      </section>
+
+      <section id="first-launch">
+        <h2>First Launch Privacy And Internet Page</h2>
+        <p>On a clean start, the app opens with a privacy and internet access page. This page explains that online access is used for calculations and external resources such as catalog updates, location lookup, elevation lookup, weather, and sky conditions.</p>
+        <ul>
+          <li>Accepting the page is retained, so it should not appear on every launch.</li>
+          <li>The acceptance state can be reset during testing to verify the first-start flow.</li>
+          <li>Location permission is separate from internet acceptance and is controlled by macOS Location Services.</li>
+          <li>If online access is declined or unavailable, bundled/local planning data can still be used for basic planning.</li>
+        </ul>
+        <div class="callout">For review and testing, start from a clean data state when verifying this page so the retained setup-complete flag does not hide the first-launch workflow.</div>
+      </section>
+
+      <section id="quick-start">
+        <h2>Quick Start</h2>
+        <ol>
+          <li>Open Astronomy Observation Planner Beta.</li>
+          <li>Accept the privacy and internet access page if this is a first launch.</li>
+          <li>Open Setup Locations and create or select the default observing site.</li>
+          <li>Open the Telescope or Equipment page and choose the telescope visible for the session.</li>
+          <li>Select one or more compatible accessories from the accessory drop-down.</li>
+          <li>Use Set as Default when the chosen telescope and accessories should be reused.</li>
+          <li>Choose Next Step to open the Target Database Filter page, or choose Plan an Observation to go directly to planning.</li>
+          <li>Filter the target catalog, add any blocked sky areas, apply the filter, and double-click targets to inspect examples.</li>
+          <li>Assign observation times and review or export the plan.</li>
+        </ol>
+      </section>
+
+      <section id="home">
+        <h2>Home Workspace</h2>
+        <p>The Home workspace shows the current moon and viewing context, then offers the main setup cards. The Mac layout is intentionally larger and more desktop-oriented than the iOS layout.</p>
+        <ul>
+          <li><strong>Setup Locations:</strong> create and save observing sites before planning.</li>
+          <li><strong>Observation Equipment Used:</strong> select telescope and accessory combinations.</li>
+          <li><strong>Create Your Custom Target Database:</strong> choose catalog and filter limits for local targets.</li>
+          <li><strong>Plan an Observation:</strong> open the observing plan workspace for the selected night and location.</li>
+        </ul>
+      </section>
+
+      <section id="locations">
+        <h2>Setup Locations</h2>
+        <p>Use Setup Locations to create, save, and select observing sites. A saved location gives the planner a latitude, longitude, elevation, time zone, and Bortle context for target visibility and sky timing.</p>
+        <h3>Location Entry Methods</h3>
+        <ul>
+          <li>Use current location if macOS Location Services and network/location lookup are available.</li>
+          <li>Enter WGS 84 latitude and longitude manually.</li>
+          <li>Use country-aware address fields when address lookup is available.</li>
+          <li>Save the location and set the primary site as default before building a plan.</li>
+        </ul>
+        <h3>Validation</h3>
+        <p>Check that latitude, longitude, elevation, country, and time zone are filled before continuing. If a location already exists, select it instead of creating duplicate site records.</p>
+      </section>
+
+      <section id="equipment">
+        <h2>Telescope And Accessories</h2>
+        <p>The Telescope page lists available telescopes and the accessories that work with each telescope. The macOS beta now supports selecting more than one compatible accessory.</p>
+        <ul>
+          <li>Choose the telescope visible for the observing session.</li>
+          <li>Use the accessory drop-down to choose accessories that match the selected telescope.</li>
+          <li>Add more than one accessory when the observing setup uses multiple compatible items.</li>
+          <li>Use Set as Default after choosing the telescope and accessories if this setup should be reused.</li>
+          <li>Use Add Another to create or attach an additional telescope setup.</li>
+          <li>Use Next Step to continue to Target Database Filter.</li>
+          <li>Use Plan an Observation to move directly into the planning workspace.</li>
+        </ul>
+        <p>Smart telescope users can choose the smart telescope directly. Non-smart or custom equipment can be tracked as a separate setup when the beta exposes that equipment entry flow.</p>
+      </section>
+
+      <section id="targets">
+        <h2>Target Database Filter</h2>
+        <p>The Target Database Filter controls the visible target list for the plan. The filter label opens the observation windows and limits as a pop-up instead of taking over the full card.</p>
+        <h3>Observation Windows And Limits Pop-Up</h3>
+        <ul>
+          <li>Open the filter link to edit limits in a focused pop-up.</li>
+          <li>Use the close control to return to the planning card without losing existing behavior.</li>
+          <li>Set magnitude, object type, altitude, azimuth, and visibility limits as needed.</li>
+          <li>Apply keeps the current filter behavior and collapses the card after activation.</li>
+        </ul>
+        <h3>Blocked Sky Areas</h3>
+        <p>After Apply, the app can ask whether another object area should be blocked out. Add blocked regions with azimuth from/to and altitude from/to values, or cancel to keep only the current filter. Added blocked areas appear under the first entry so the user can see each excluded sky region.</p>
+        <p>The Planning Catalog card also reminds the user to double-click a target below to see an example.</p>
+      </section>
+
+      <section id="planning">
+        <h2>Plan An Observation</h2>
+        <p>The planning page uses the selected location, equipment, accessories, target filters, and blocked sky areas to help build an observing list for the night.</p>
+        <ul>
+          <li>Review target rows and visibility values before adding targets to the plan.</li>
+          <li>Double-click a target to inspect example or detail information.</li>
+          <li>Use 12-hour or 24-hour time entry carefully; verify saved times before exporting.</li>
+          <li>Use planned observation windows to avoid low-altitude or blocked regions.</li>
+          <li>Review the final plan before saving or exporting.</li>
+        </ul>
+      </section>
+
+      <section id="exports">
+        <h2>Review, Export, And Logs</h2>
+        <p>The macOS app is intended to keep planning and observing logs in one desktop workspace. Available actions can include saving the current plan, printing, creating a PDF, reviewing target details, and recording session notes depending on the beta build.</p>
+        <ul>
+          <li>Confirm the default location and equipment before saving a plan.</li>
+          <li>Confirm target order and observation times before export.</li>
+          <li>Use exported PDFs or printed plans for field use.</li>
+          <li>Keep beta feedback focused on repeatable steps, visible result, and expected result.</li>
+        </ul>
+      </section>
+
+      <section id="support">
+        <h2>Support Notes</h2>
+        <p>When reporting beta feedback, include the macOS version, app version/build, whether the setup-complete privacy page was already accepted, the selected location, selected telescope/accessories, and the page where the issue occurred.</p>
+        <p>This manual is intentionally separate from the iOS manual. iPhone and iPad users should use the <a href="../ios/user-manual.html">BigSky Planner iOS Manual</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 BigSkyAstro. macOS beta manual for Astronomy Observation Planner.
+    </footer>
+  </div>
+</body>
+</html>

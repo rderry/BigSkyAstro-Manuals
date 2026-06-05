@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BigSky Planner iOS User Manual</title>
+  <style>
+    :root {
+      --bg: #061029;
+      --panel: rgba(237, 247, 255, 0.98);
+      --panel-soft: rgba(222, 239, 255, 0.97);
+      --ink: #09223b;
+      --muted: #34546f;
+      --line: rgba(110, 166, 222, 0.36);
+      --gold: #d2ebff;
+      --blue: #1a5f9f;
+      --metal-deep: #0b2745;
+      --metal-light: #edf7ff;
+      --red: #ff737a;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      overflow-wrap: break-word;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    @page {
+      size: Letter;
+      margin: 0.45in;
+    }
+
+    @page:first {
+      margin: 0;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Aptos", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(13, 39, 74, 0.78) 0%, rgba(32, 84, 128, 0.64) 30%, rgba(245, 249, 253, 0.92) 70%, rgba(255, 255, 255, 0.98) 100%),
+        url("assets/andromeda.png") center top / cover fixed,
+        #0b1f3d;
+      line-height: 1.58;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 42px 20px 72px;
+    }
+
+    header {
+      color: var(--white);
+      padding: 28px 0 34px;
+    }
+
+    .cover-page {
+      min-height: 78vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      background:
+        linear-gradient(105deg, rgba(5, 24, 49, 0.72) 0%, rgba(24, 80, 125, 0.56) 48%, rgba(88, 160, 216, 0.36) 100%),
+        linear-gradient(180deg, rgba(226, 243, 255, 0.34), rgba(117, 185, 238, 0.30)),
+        url("assets/manual-cover-background.jpeg") center center / cover no-repeat;
+      border: 1px solid rgba(184, 221, 255, 0.30);
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 42px 46px;
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--gold);
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, 0.78);
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .nav a[aria-current="page"] {
+      color: var(--gold);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 840px;
+      font-size: clamp(2.4rem, 5.8vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+      overflow-wrap: break-word;
+    }
+
+    .lede {
+      max-width: 850px;
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1.08rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.95rem;
+    }
+
+    .meta span {
+      border: 1px solid rgba(184, 221, 255, 0.44);
+      background: rgba(217, 237, 255, 0.12);
+      border-radius: 999px;
+      padding: 7px 12px;
+      max-width: 100%;
+    }
+
+    .cover-kicker {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .cover-topics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 900px;
+      margin-top: 34px;
+    }
+
+    .cover-copy {
+      max-width: 940px;
+      background: linear-gradient(90deg, rgba(20, 66, 108, 0.66), rgba(64, 132, 187, 0.40));
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 28px 30px;
+      box-shadow: 0 24px 58px rgba(17, 74, 124, 0.18);
+    }
+
+    .cover-topics span {
+      border: 1px solid rgba(184, 221, 255, 0.42);
+      background: linear-gradient(135deg, rgba(237, 247, 255, 0.34), rgba(100, 166, 222, 0.28));
+      border-radius: 8px;
+      padding: 12px 14px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    main {
+      display: grid;
+      gap: 18px;
+    }
+
+    section {
+      background: linear-gradient(145deg, rgba(239, 248, 255, 0.98), var(--panel));
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 54px rgba(6, 16, 41, 0.14);
+      padding: 26px;
+      overflow: hidden;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: var(--blue);
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: #153f86;
+      font-size: 1.06rem;
+    }
+
+    p { margin: 0 0 12px; }
+
+    ul, ol {
+      margin: 8px 0 0 1.25rem;
+      padding: 0;
+    }
+
+    li { margin: 7px 0; }
+
+    code {
+      background: #eef3fb;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+      white-space: nowrap;
+      overflow-wrap: normal;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(280px, 0.72fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .screenshot {
+      margin: 0;
+      background: #0b1430;
+      border-radius: 8px;
+      padding: 10px;
+      border: 1px solid rgba(16, 33, 58, 0.20);
+    }
+
+    .screenshot img {
+      display: block;
+      width: 100%;
+      max-height: 680px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #000;
+    }
+
+    figcaption {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.84rem;
+      margin-top: 8px;
+    }
+
+    .downloads {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .button {
+      color: #061629;
+      background: linear-gradient(135deg, #f5fbff 0%, #b8ddff 48%, #6fa9df 100%);
+      border-radius: 8px;
+      padding: 9px 13px;
+      box-shadow: 0 10px 24px rgba(82, 150, 214, 0.25);
+      text-decoration: none;
+      font-weight: 800;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      border-left: 4px solid var(--gold);
+      background: var(--panel-soft);
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-top: 14px;
+    }
+
+    .chapter-page,
+    .index-page {
+      min-height: 9.2in;
+    }
+
+    .chapter-list,
+    .index-list {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .chapter-list {
+      counter-reset: chapter;
+      display: grid;
+      gap: 10px;
+    }
+
+    .chapter-list li {
+      margin: 0;
+    }
+
+    .chapter-list a {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: start;
+      color: var(--ink);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #f5fbff, #dceeff);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .chapter-list a::before {
+      counter-increment: chapter;
+      content: counter(chapter, decimal-leading-zero);
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .chapter-list strong,
+    .index-list strong {
+      display: block;
+      color: var(--blue);
+      line-height: 1.2;
+    }
+
+    .chapter-list span,
+    .index-list span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 2px;
+    }
+
+    .index-list {
+      columns: 2 300px;
+      column-gap: 22px;
+    }
+
+    .index-list li {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      margin: 0 0 11px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, #f5fbff, #dceeff);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .index-list a {
+      color: #153f86;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .trouble {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .trouble div {
+      background: linear-gradient(135deg, #f5fbff, #dceeff);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .footer {
+      color: rgba(255, 255, 255, 0.72);
+      margin-top: 28px;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 820px) {
+      .topline { align-items: flex-start; flex-direction: column; }
+      .grid, .trouble { grid-template-columns: 1fr; }
+      .cover-topics { grid-template-columns: 1fr; }
+      .wrap {
+        max-width: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      .nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 14px;
+        width: 100%;
+      }
+      .nav a { white-space: normal; }
+      .downloads { flex-direction: column; }
+      .button {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      section { padding: 20px; }
+      .cover-page { padding: 32px 20px; }
+      .cover-copy { padding: 22px 20px; }
+      h1 {
+        max-width: 100%;
+        font-size: clamp(1.85rem, 8vw, 2.45rem);
+        line-height: 1.06;
+      }
+    }
+
+    @media print {
+      body {
+        background:
+          linear-gradient(180deg, rgba(13, 39, 74, 0.76) 0%, rgba(32, 84, 128, 0.60) 42%, rgba(84, 151, 208, 0.30) 100%),
+          url("assets/manual-cover-background.jpeg") center top / cover no-repeat,
+          #0b1f3d;
+        color: var(--ink);
+      }
+
+      .wrap {
+        max-width: none;
+        padding: 0.34in;
+      }
+
+      header {
+        color: var(--metal-light);
+        break-after: page;
+        page-break-after: always;
+      }
+
+      .brand,
+      h1,
+      h2,
+      h3,
+      .cover-kicker,
+      .lede,
+      .meta {
+        color: var(--metal-light);
+      }
+
+      .cover-page {
+        min-height: 11in;
+        padding: 0.72in;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        background:
+          linear-gradient(105deg, rgba(5, 24, 49, 0.72) 0%, rgba(24, 80, 125, 0.56) 47%, rgba(88, 160, 216, 0.38) 100%),
+          linear-gradient(180deg, rgba(226, 243, 255, 0.36), rgba(117, 185, 238, 0.32)),
+          url("assets/manual-cover-background.jpeg") center center / cover no-repeat;
+      }
+
+      .cover-page .topline {
+        margin-bottom: 0.45in;
+      }
+
+      .cover-page .brand,
+      .cover-page h1,
+      .cover-page .cover-kicker,
+      .cover-page .lede,
+      .cover-page .meta {
+        color: var(--metal-light);
+      }
+
+      .cover-page .brand,
+      .cover-page .cover-kicker {
+        color: var(--gold);
+      }
+
+      .cover-page .meta span {
+        color: var(--metal-light);
+        background: rgba(15, 57, 96, 0.46);
+        border-color: rgba(184, 221, 255, 0.58);
+      }
+
+      .cover-copy {
+        background: linear-gradient(90deg, rgba(20, 66, 108, 0.66), rgba(64, 132, 187, 0.40));
+        box-shadow: none;
+      }
+
+      .cover-topics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .chapter-list a,
+      .index-list li {
+        background: linear-gradient(135deg, #f5fbff, #dceeff);
+      }
+
+      .lede,
+      .footer {
+        color: rgba(237, 247, 255, 0.78);
+      }
+
+      .nav a {
+        color: rgba(237, 247, 255, 0.86);
+      }
+
+      .downloads {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      main {
+        display: block;
+      }
+
+      section {
+        box-shadow: 0 18px 54px rgba(6, 16, 41, 0.18);
+        background: linear-gradient(145deg, #f5fbff, #dceeff);
+        border-color: rgba(110, 166, 222, 0.42);
+        break-before: page;
+        page-break-before: always;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin: 0 0 18px;
+        overflow: hidden;
+      }
+
+      section:first-of-type {
+        break-before: auto;
+        page-break-before: auto;
+      }
+
+      .grid {
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.54fr);
+        gap: 16px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .screenshot {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .screenshot img {
+        max-height: 7.4in;
+      }
+
+      figcaption {
+        color: #e4ebf5;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="cover-page" id="cover">
+      <div class="topline">
+        <p class="brand">BigSkyAstro</p>
+        <nav class="nav" aria-label="BigSkyAstro pages">
+          <a href="user-manual.html" aria-current="page">User Manual</a>
+          <a href="test-checklist.html">Test Checklist</a>
+          <a href="BigSky-Planner-iOS-User-Manual.pdf">Manual PDF</a>
+          <a href="BigSky-Planner-iOS-Help-Manual.html">Help Page</a>
+          <a href="BigSky-Planner-iOS-Help-Manual.pdf">Help PDF</a>
+          <a href="iOS-1.3-test-checklist.pdf">Checklist PDF</a>
+        </nav>
+      </div>
+      <div class="cover-copy">
+        <p class="cover-kicker">iPhone and iPad Guide</p>
+        <h1>BigSky Planner iOS User Manual</h1>
+        <p class="lede">A screenshot-guided manual for BigSky Planner iOS Release 1.3.1 (1), covering setup, locations, telescope, targets, planner, weather, updates, and troubleshooting.</p>
+        <div class="meta">
+          <span>Release: 1.3.1 (1)</span>
+          <span>Updated: 2026-05-30</span>
+        </div>
+        <div class="cover-topics" aria-label="Manual highlights">
+          <span>Set up the observing site</span>
+          <span>Filter target catalogs</span>
+          <span>Build and print plans</span>
+          <span>Check weather and darkness</span>
+          <span>Update comet and asteroid data</span>
+          <span>Find quick answers</span>
+        </div>
+      </div>
+      <div class="downloads">
+        <a class="button" href="BigSky-Planner-iOS-User-Manual.pdf">Download User Manual</a>
+        <a class="button" href="BigSky-Planner-iOS-Help-Manual.html">Open Latest Help Page</a>
+        <a class="button" href="BigSky-Planner-iOS-Help-Manual.pdf">Download Help PDF</a>
+        <a class="button" href="iOS-1.3-test-checklist.pdf">Download Test Checklist</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="chapter-page" id="chapters">
+        <h2>Chapters</h2>
+        <p>Use this page as the map for the manual. Each topic starts on its own page in the PDF so the guide is easier to scan during setup or while observing.</p>
+        <ol class="chapter-list">
+          <li><a href="#first-start"><span><strong>First Start Setup</strong><span>Internet permission, privacy review, language, first location, telescope, and plan folder.</span></span></a></li>
+          <li><a href="#home"><span><strong>Home</strong><span>Telescope initialize and stop tracking time, main actions, and the bottom information card.</span></span></a></li>
+          <li><a href="#locations"><span><strong>Locations</strong><span>GPS, manual entry, Address Info, default site, elevation, scrolling, and canceling a new location.</span></span></a></li>
+          <li><a href="#telescope"><span><strong>Telescope</strong><span>Smart telescope and accessory selection used in observing plans.</span></span></a></li>
+          <li><a href="#targets"><span><strong>Target Setup</strong><span>Catalog, Time, Filter, Current Setup, red/green card status, and stale target update behavior.</span></span></a></li>
+          <li><a href="#advanced-filters"><span><strong>Advanced Filters and Results</strong><span>Magnitude, altitude, azimuth, object types, Clear Sky ranges, obstructions, and validation.</span></span></a></li>
+          <li><a href="#observation-time"><span><strong>Observation Time</strong><span>Target start/stop time, after-midnight handling, and overlap checks.</span></span></a></li>
+          <li><a href="#planner"><span><strong>Planner</strong><span>Review targets, sort, save, preview, print, share, load, and delete plans.</span></span></a></li>
+          <li><a href="#weather"><span><strong>Weather and Sky Info</strong><span>Date/time period, source, Update, Sunset, Sunrise, Bortle/SQM, darkness, and hourly forecast rows.</span></span></a></li>
+          <li><a href="#setup"><span><strong>Set Up</strong><span>Language, units, internet permission, database updates, small-body updates, and About This App.</span></span></a></li>
+          <li><a href="#help"><span><strong>Help and Clock Support</strong><span>In-app help and HHMM, 12-hour, and 24-hour time entry.</span></span></a></li>
+          <li><a href="#troubleshooting"><span><strong>Troubleshooting</strong><span>Fast fixes for blank weather, missing targets, stale asteroid/comet data, and PDF or print issues.</span></span></a></li>
+          <li><a href="#answer-index"><span><strong>Quick Answer Index</strong><span>End-of-manual index for common questions and the topic that answers them.</span></span></a></li>
+        </ol>
+      </section>
+
+      <section class="grid" id="first-start">
+        <div>
+          <h2>First Start Setup</h2>
+          <ul>
+            <li>Answer whether the app may use the internet for setup and user-started database updates.</li>
+            <li>Open the Privacy Statement link before answering if you want to review data handling. Set Up shows that local privacy review state later.</li>
+            <li>Completed Internet, Privacy, and Plan Save Folder actions dim after they are set; use Clear and Start Over to reset first-start setup.</li>
+            <li>The Finish card and Setup Checklist stay pinned. Collapse Details hides the explanatory setup text but keeps the checklist tick marks visible.</li>
+            <li>Choose preferred language, primary viewing location, and primary telescope with accessories.</li>
+            <li>After saving the primary telescope, the telescope editor collapses to the saved telescope/accessory summary and setup moves toward the plan folder step.</li>
+            <li>Choose or create a plan folder in Files, or save the folder setting to complete that setup item.</li>
+            <li>Use Finish Later only after the internet permission question has been answered.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level1/00-first-start-setup.jpg" alt="First start and home setup path">
+          <figcaption>First setup path and main home actions.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="home">
+        <div>
+          <h2>Home</h2>
+          <ul>
+            <li>Home opens Locations, Telescope, Targets, Planner, Weather, Set Up, and Help.</li>
+            <li>The telescope time entry accepts HHMM, 12-hour, and 24-hour values.</li>
+            <li>Applying the telescope time window saves the observing window used by weather and target planning, then routes you to location setup.</li>
+            <li>The compact top banner leaves room for the action buttons and bottom data card on iPhone.</li>
+            <li>The My Telescope card uses tighter padding so the lower information card stays readable.</li>
+            <li>The taller bottom data card shows Location Name, Telescope With Accessories, Total Targets, and Chosen Hemisphere Targets in larger dark yellow text on the standard blue background.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level1/01-home-iphone.jpg" alt="Home dashboard">
+          <figcaption>Home dashboard and bottom navigation.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="locations">
+        <div>
+          <h2>Locations</h2>
+          <ul>
+            <li>Save at least one valid observing location before target filtering or weather.</li>
+            <li>Use GPS when available. After GPS fills the site, Address Info collapses automatically and can be expanded again.</li>
+            <li>If you start a new location card, use Cancel to leave without saving it.</li>
+            <li>Manual address entry starts with Country so address labels match the selected country.</li>
+            <li>The page scrolls while editing so lower fields and saved locations remain reachable.</li>
+            <li>Only one saved location can be default at once.</li>
+            <li>Set Default promotes a saved location without re-entering site details, and Delete Location removes old sites.</li>
+            <li>Elevation is saved when available and is used for weather pressure adjustments.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level1/02-locations-top-level.jpg" alt="Locations page">
+          <figcaption>Saved observation locations and add-location controls.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="telescope">
+        <div>
+          <h2>Telescope</h2>
+          <ul>
+            <li>Select the smart telescope used for the observation plan.</li>
+            <li>Select compatible accessories before saving the telescope setup.</li>
+            <li>The planner report includes selected telescope and accessory names.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level1/03-telescope-top-level.jpg" alt="Telescope page">
+          <figcaption>Smart telescope and accessory setup.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="targets">
+        <div>
+          <h2>Targets</h2>
+          <ul>
+            <li>Use Update Data when target sources need refreshing.</li>
+            <li>Use the Current Setup card to expand or collapse the active target settings summary.</li>
+            <li>Catalog, Time, and Filter cards open popups. Apply catalog, time, and filter changes from inside those popups before reviewing the target list.</li>
+            <li>Action cards use glass status colors: green when a required setup block is valid, red until required user data is entered or the user has opened a filter without setting it.</li>
+            <li>The top Apply action has been removed so Catalog and Current Setup have more room.</li>
+            <li>Current target setup is held temporarily, so returning to Target Setup restores the active catalog, time, and filter choices.</li>
+            <li>If transient target data is stale, target cards show Update Data and remain disabled until refreshed.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level1/04-targets-top-level.jpg" alt="Target filters">
+          <figcaption>Target database filters and catalog scope.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="advanced-filters">
+        <div>
+          <h2>Advanced Filters and Results</h2>
+          <ul>
+            <li>Use Advanced Filters for magnitude, altitude, magnetic azimuth, object type, and observing-window limits.</li>
+            <li>Altitude limits accept 0 through 99 degrees. Azimuth limits accept 000 through 360 degrees.</li>
+            <li>Obstruction ranges remove blocked azimuth or altitude areas from target candidates.</li>
+            <li>Clear Sky filter ranges can be added one after another without closing the card, and a new range can be canceled before saving.</li>
+            <li>Apply Filter validates required fields. If data is invalid, the app asks for the missing or corrected answer.</li>
+            <li>Use Add to Planner for unscheduled targets or Go to Planner for targets already in the plan.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level2/01-targets-advanced-filters.jpg" alt="Advanced target filters">
+          <figcaption>Advanced target filter controls.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="observation-time">
+        <div>
+          <h2>Observation Time</h2>
+          <ul>
+            <li>Set start and stop time for each target.</li>
+            <li>After-midnight times are normalized into the same observing night.</li>
+            <li>The app checks for overlapping planned target windows before saving.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level3/01-target-observation-time-sheet.jpg" alt="Observation time sheet">
+          <figcaption>Target observation time sheet.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="planner">
+        <div>
+          <h2>Planner</h2>
+          <ul>
+            <li>Review targets and adjust observation times.</li>
+            <li>Sort the plan by Start Time, Zenith, or Magnitude.</li>
+            <li>Save PDF, Preview, Print Plan, Delete Plan, Load Plan, and Share Plan are available when a plan is present.</li>
+            <li>After Load Plan, choose Yes to add more targets or No to stay on Planner.</li>
+            <li>The loaded plan name and loaded-plan message turn yellow.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level2/03-planner-actions.jpg" alt="Planner actions">
+          <figcaption>Planner action controls and plan output options.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="weather">
+        <div>
+          <h2>Weather and Sky Info</h2>
+          <ul>
+            <li>Weather uses the default location and observing window.</li>
+            <li>If My Telescope times are set, the viewing period follows that initialize/stop window until a saved plan takes over.</li>
+            <li>The glass Date and Time Period Forecast card lists the active observing date and time range.</li>
+            <li>The Sun/Moon glass card shows Sunset, Sunrise, Bortle/SQM, and time of total darkness based on the saved location.</li>
+            <li>Bortle/SQM is estimated from the saved latitude, longitude, elevation, and nearby population light-pressure reference used by the app.</li>
+            <li>The compact Source row names the weather source and includes Update to reload the hourly data.</li>
+            <li>Hourly rows list time, icon, cloud percentage, rain chance, pressure trend, temperature, and dew point.</li>
+            <li>The Done action is kept above the menu bar on iPhone.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level1/07-weather-sky-info.jpg" alt="Weather and sky info">
+          <figcaption>Weather source, sun/moon, Bortle/SQM, and local sky details.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="setup">
+        <div>
+          <h2>Set Up</h2>
+          <ul>
+            <li>Set Up contains language, units, internet permission, update actions, and About This App.</li>
+            <li>Internet-required actions are labeled.</li>
+            <li>Target and smart telescope database updates are user-started.</li>
+            <li>Target Database Update summarizes changed transients, lists their names, and shows pulled-and-stored asteroid and comet names such as Ceres and Vesta.</li>
+            <li>Off-site pages open inside a controlled in-app browser with a return button.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level1/08-set-up-top-level.jpg" alt="Set Up page">
+          <figcaption>Set Up and database update controls.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="help">
+        <div>
+          <h2>Help and Clock Support</h2>
+          <ul>
+            <li>Open Help from the question mark icon.</li>
+            <li>Help mirrors the major manual sections in shorter form.</li>
+            <li>Time entry accepts HHMM, 12-hour, and 24-hour formats, while displayed times follow the iPhone or iPad clock preference.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level3/02-help-clock-support.jpg" alt="Clock support detail">
+          <figcaption>12-hour and 24-hour clock support.</figcaption>
+        </figure>
+      </section>
+
+      <section id="troubleshooting">
+        <h2>Troubleshooting</h2>
+        <div class="trouble">
+          <div>
+            <h3>No targets appear</h3>
+            <ul>
+              <li>Save a default location.</li>
+              <li>Set required red Catalog, Time, or Filter cards, then use Apply Filters inside the popup.</li>
+              <li>Loosen magnitude, altitude, azimuth, object type, and obstruction settings.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Weather is blank</h3>
+            <ul>
+              <li>Save a valid default location with latitude and longitude.</li>
+              <li>Confirm internet permission for weather prediction data.</li>
+              <li>Add elevation when available.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Location will not save</h3>
+            <ul>
+              <li>Enter a location name.</li>
+              <li>Use GPS or enter latitude and longitude.</li>
+              <li>Choose Country first for manual address entry.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Plan load is confusing</h3>
+            <ul>
+              <li>Watch for the Plan Loaded prompt.</li>
+              <li>Choose Yes to add targets or No to remain on Planner.</li>
+              <li>Yellow plan text identifies a loaded plan.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Numeric keypad covers fields</h3>
+            <ul>
+              <li>Dismiss the keypad after entering the value.</li>
+              <li>Scroll cards under the filter card.</li>
+              <li>Collapse advanced filters after applying.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Asteroids or comets look stale</h3>
+            <ul>
+              <li>Run Target Database Update from Set Up.</li>
+              <li>Review the update summary for Small bodies updated, Pulled and stored, and Changed transients.</li>
+              <li>Stale transient target cards cannot be used until data is refreshed.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>PDF or print does not appear</h3>
+            <ul>
+              <li>Confirm at least one target exists in the plan.</li>
+              <li>Use Preview first.</li>
+              <li>Use Share Plan if the device print sheet is unavailable.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="note">All app data stays on the device. Internet access is used only for selected updates, weather, image lookup, privacy/support pages, and other user-started online actions.</div>
+      </section>
+
+      <section class="index-page" id="answer-index">
+        <h2>Quick Answer Index</h2>
+        <p>Use this final page when you know the problem or setting but do not remember which topic explains it.</p>
+        <ul class="index-list">
+          <li><strong>Address Info after GPS</strong><span>See <a href="#locations">Locations</a>: GPS fills the site, collapses Address Info, and allows it to reopen.</span></li>
+          <li><strong>Add targets to a plan</strong><span>See <a href="#targets">Target Setup</a>, <a href="#advanced-filters">Advanced Filters and Results</a>, and <a href="#observation-time">Observation Time</a>.</span></li>
+          <li><strong>Altitude or azimuth limits</strong><span>See <a href="#advanced-filters">Advanced Filters and Results</a>: altitude is 0 to 99 degrees, azimuth is 000 to 360 degrees.</span></li>
+          <li><strong>Asteroids or comets look stale</strong><span>See <a href="#setup">Set Up</a> and <a href="#troubleshooting">Troubleshooting</a>: run Target Database Update and check the summary.</span></li>
+          <li><strong>Bortle, SQM, and darkness</strong><span>See <a href="#weather">Weather and Sky Info</a>: values are based on the saved location and observing window.</span></li>
+          <li><strong>Catalog card is red</strong><span>See <a href="#targets">Target Setup</a>: set catalog scope and magnitude, then apply inside the popup.</span></li>
+          <li><strong>Clear Sky filter ranges</strong><span>See <a href="#advanced-filters">Advanced Filters and Results</a>: add ranges one after another, or cancel a new range.</span></li>
+          <li><strong>Current Setup summary</strong><span>See <a href="#targets">Target Setup</a>: expand it to review active catalog, time, and filter settings.</span></li>
+          <li><strong>Default observing location</strong><span>See <a href="#locations">Locations</a>: only one saved location is active at a time.</span></li>
+          <li><strong>Filter card is red</strong><span>See <a href="#targets">Target Setup</a>: open the Filter popup, enter the required data, and apply it.</span></li>
+          <li><strong>Home telescope time</strong><span>See <a href="#home">Home</a>: enter initialize and stop tracking time in HHMM, 12-hour, or 24-hour form.</span></li>
+          <li><strong>Hourly weather rows</strong><span>See <a href="#weather">Weather and Sky Info</a>: rows show time, icon, cloud, rain, pressure, temperature, and dew point.</span></li>
+          <li><strong>Internet permission</strong><span>See <a href="#first-start">First Start Setup</a> and <a href="#setup">Set Up</a>: online work is user-started.</span></li>
+          <li><strong>Load a saved plan</strong><span>See <a href="#planner">Planner</a>: choose Yes to add more targets or No to stay on Planner.</span></li>
+          <li><strong>No targets appear</strong><span>See <a href="#troubleshooting">Troubleshooting</a>: confirm location, set red cards, and loosen filters.</span></li>
+          <li><strong>PDF or print plan</strong><span>See <a href="#planner">Planner</a> and <a href="#troubleshooting">Troubleshooting</a>: preview first, then print, save, or share.</span></li>
+          <li><strong>Plan folder</strong><span>See <a href="#first-start">First Start Setup</a>: choose or create a Files folder for saved plan output.</span></li>
+          <li><strong>Source of weather</strong><span>See <a href="#weather">Weather and Sky Info</a>: the source row names the provider and includes Update.</span></li>
+          <li><strong>Stale transient target card</strong><span>See <a href="#targets">Target Setup</a>: disabled cards require Update Data before use.</span></li>
+          <li><strong>Sunset and Sunrise</strong><span>See <a href="#weather">Weather and Sky Info</a>: the Sun/Moon card shows Sunset first and Sunrise second.</span></li>
+          <li><strong>Time after midnight</strong><span>See <a href="#observation-time">Observation Time</a>: after-midnight values are normalized into the same observing night.</span></li>
+          <li><strong>Update Data</strong><span>See <a href="#targets">Target Setup</a> and <a href="#setup">Set Up</a>: refresh local target and transient data when needed.</span></li>
+          <li><strong>Weather is blank</strong><span>See <a href="#troubleshooting">Troubleshooting</a>: save location, confirm internet permission, and include elevation when available.</span></li>
+        </ul>
+      </section>
+    </main>
+
+    <p class="footer">BigSkyAstro - BigSky Planner iOS User Manual - Release 1.3.1 (1)</p>
+  </div>
+</body>
+</html>

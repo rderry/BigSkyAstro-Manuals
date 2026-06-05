@@ -1,0 +1,223 @@
+<!doctype html><html><head><meta charset="utf-8"><title>BigSky Planner iOS Help Manual</title><style>body{font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;margin:48px;line-height:1.45;color:#172033}h1{font-size:30px;border-bottom:2px solid #d7deea;padding-bottom:12px}h2{font-size:22px;margin-top:30px;border-bottom:1px solid #e6ebf2;padding-bottom:6px}h3{font-size:17px;margin-top:20px}code{font-family:Menlo,monospace;background:#f3f5f8;padding:1px 4px;border-radius:4px}li{margin:5px 0}p{margin:9px 0}.shot{color:#5a6680;font-style:italic}@page{size:auto;margin:0.6in}</style></head><body>
+<h1>BigSky Planner iOS User Manual</h1>
+<p>Release: 1.3.1 (1)</p>
+<p>Updated: 2026-05-30</p>
+<h2>Purpose</h2>
+<p>BigSky Planner for iPhone and iPad helps set up an observing location, choose telescope equipment and accessories, filter target catalogs, assign observation times, review weather and sky information, and export an observing plan.</p>
+<h2>First Start Setup</h2>
+<p class="shot">Screenshot: First start setup path (<code>Screenshots/UserGuide/Level1/00-first-start-setup.png</code>)</p>
+<ul>
+<li>On first launch, answer whether the app may use the internet for setup and user-started data updates.</li>
+<li>Open the Privacy Statement link before answering if you want to review how data is handled. The privacy review state is saved locally and shown again in Set Up.</li>
+<li>After Internet, Privacy, or Plan Save Folder are answered, their action controls dim so the completed setup items are clear. Use Clear and Start Over to reset first-start setup.</li>
+<li>The Finish card and Setup Checklist stay pinned at the top. Collapse Details hides the explanatory setup text while leaving the checklist tick marks visible.</li>
+<li>Choose a preferred language.</li>
+<li>Create a primary viewing location using GPS, address entry, or manual coordinates.</li>
+<li>Choose the primary telescope and any compatible accessories. After saving, the telescope card collapses to its summary and the setup flow moves to the plan folder step.</li>
+<li>Choose or create a plan save folder in Files. That folder becomes the default destination for saved plan files and PDFs when available.</li>
+<li>Finish setup when internet preference, privacy review, location, telescope, plan save folder setting, and language are set. You can finish later after answering the internet permission prompt.</li>
+</ul>
+<h2>Home</h2>
+<p class="shot">Screenshot: Home dashboard (<code>Screenshots/UserGuide/Level1/01-home-iphone.png</code>)</p>
+<ul>
+<li>Home is the main dashboard.</li>
+<li>Use the action buttons to open Locations, Telescope, Targets, Planner, Weather, Set Up, and Help.</li>
+<li>The top card accepts telescope initialize and stop tracking times. Time entry accepts HHMM, 12-hour text such as <code>8:30 PM</code>, and 24-hour text such as <code>2030</code>.</li>
+<li>Applying the telescope time window saves the observing window used by weather and target planning, then sends you to set or confirm a location.</li>
+<li>The top Home banner is compact so the actions and bottom data card remain visible on iPhone.</li>
+<li>The interface follows the iPhone or iPad system appearance automatically; the app no longer forces a dark-only help or shell view.</li>
+<li>The My Telescope card uses tighter padding so the lower information card stays readable.</li>
+<li>The taller bottom data card lists Location Name, Telescope With Accessories, Total Targets, and Chosen Hemisphere Targets in larger dark yellow text on the standard blue card background.</li>
+</ul>
+<h2>Locations</h2>
+<p class="shot">Screenshot: Observation locations (<code>Screenshots/UserGuide/Level1/02-locations-top-level.png</code>)</p>
+<ul>
+<li>Save at least one observing location before filtering targets or reading weather.</li>
+<li>Use GPS first when possible. After GPS fills the site, Address Info collapses automatically and can be expanded again.</li>
+<li>If you start a new location card, use Cancel to leave without saving it.</li>
+<li>Manual entry asks for Country first so address labels match the selected country.</li>
+<li>The page scrolls while editing so lower fields and saved locations remain reachable.</li>
+<li>Elevation is saved when GPS or manual entry provides it. Weather pressure is adjusted for the saved elevation when available.</li>
+<li>Only one location can be default at a time.</li>
+<li>Set Default promotes a saved location without re-entering the site details.</li>
+<li>Use Delete Location on a saved location card when a site should no longer be available.</li>
+</ul>
+<h2>Telescope</h2>
+<p class="shot">Screenshot: Smart telescope setup (<code>Screenshots/UserGuide/Level1/03-telescope-top-level.png</code>)</p>
+<ul>
+<li>Select the telescope you plan to use.</li>
+<li>Select compatible accessories for that telescope before saving the setup.</li>
+<li>Saved telescope and accessory data are used in Planner reports.</li>
+<li>The first saved or selected telescope can become the default telescope used by Home and Planner.</li>
+</ul>
+<h2>Targets</h2>
+<p class="shot">Screenshot: Target database filters (<code>Screenshots/UserGuide/Level1/04-targets-top-level.png</code>)</p>
+<ul>
+<li>Use Update Data when target sources need refreshing.</li>
+<li>Use the Current Setup card to expand or collapse the active target settings summary.</li>
+<li>Catalog, Time, and Filter cards open popups. Apply catalog, time, and filter changes from inside those popups before reviewing the target list.</li>
+<li>Action cards use glass status colors: green when a required setup block is valid, red until required user data is entered or the user has opened a filter without setting it.</li>
+<li>The top Apply action has been removed so Catalog and Current Setup have more room.</li>
+<li>Current target setup is held temporarily, so returning to Target Setup restores the active catalog, time, and filter choices.</li>
+<li>If transient target data is stale, target cards show Update Data and remain disabled until refreshed.</li>
+<li>Numeric altitude and azimuth entry supports the iOS numeric keypad. Dismiss the keypad before moving farther down the card.</li>
+</ul>
+<h2>Advanced Target Filters</h2>
+<p class="shot">Screenshot: Advanced target filters (<code>Screenshots/UserGuide/Level2/01-targets-advanced-filters.png</code>)</p>
+<ul>
+<li>Open Advanced Filters for magnitude, altitude, magnetic azimuth, object type, and observing-window limits.</li>
+<li>Altitude limits accept 0 through 99 degrees. Azimuth limits accept 000 through 360 degrees.</li>
+<li>Obstructions remove targets that fall inside blocked azimuth or altitude ranges.</li>
+<li>Clear Sky filter ranges can be added one after another without closing the card, and a new range can be canceled before saving.</li>
+<li>Returning to Advanced Filters activates Apply Filter even if values did not change, so you can rerun the current filter set.</li>
+<li>After applying filters, advanced options collapse and the target data is presented.</li>
+</ul>
+<h2>Target Results</h2>
+<p class="shot">Screenshot: Filtered target results (<code>Screenshots/UserGuide/Level2/02-targets-filter-results.png</code>)</p>
+<ul>
+<li>Target cards show object type, magnitude, first usable time, altitude, and azimuth.</li>
+<li>Use Add to Planner for a target that is not yet scheduled.</li>
+<li>Use Go to Planner for a target already added to the plan.</li>
+<li>Targets that fail obstruction, altitude, azimuth, magnitude, location, or time-window checks are removed from the candidate list.</li>
+</ul>
+<h2>Observation Time Sheet</h2>
+<p class="shot">Screenshot: Target observation time sheet (<code>Screenshots/UserGuide/Level3/01-target-observation-time-sheet.png</code>)</p>
+<ul>
+<li>Set the target start and stop time from the observation-time sheet.</li>
+<li>Start and stop values can be entered in 12-hour or 24-hour form.</li>
+<li>Times after midnight are normalized to the next calendar day of the same observing night.</li>
+<li>The app checks planned target windows and blocks true overlaps.</li>
+<li>If a time conflict is found, cancel or resolve the conflicting target before the new target is committed.</li>
+</ul>
+<h2>Planner</h2>
+<p class="shot">Screenshot: Planner (<code>Screenshots/UserGuide/Level1/05-planner-top-level.png</code>)</p>
+<ul>
+<li>The Planner page collects targets and observation windows into a plan.</li>
+<li>Sort the plan by Start Time, Zenith, or Magnitude as needed.</li>
+<li>Target cards scroll under the save and print options so the controls remain reachable.</li>
+<li>If no plan exists, the planner says no plan is currently built and links back to Plan an Observation.</li>
+</ul>
+<h2>Planner Actions</h2>
+<p class="shot">Screenshot: Planner actions (<code>Screenshots/UserGuide/Level2/03-planner-actions.png</code>)</p>
+<ul>
+<li>When a plan is present, Save PDF, Preview, Print Plan, Delete Plan, Load Plan, and Share Plan are available.</li>
+<li>Load Plan opens saved plans. After loading, the app shows <code>Plan Loaded</code> and asks whether to add more targets.</li>
+<li>Choose Yes to go to Targets. Choose No to stay on Planner.</li>
+<li>The loaded plan name and loaded-plan status text turn yellow so it is clear a saved plan is active.</li>
+<li>Printing uses a spreadsheet-style layout with Start, End, Alt, Az, and Mag.</li>
+</ul>
+<h2>Weather and Sky Info</h2>
+<p class="shot">Screenshot: Weather and sky info (<code>Screenshots/UserGuide/Level1/07-weather-sky-info.png</code>)</p>
+<ul>
+<li>Weather uses the default viewing location and telescope observing window when available.</li>
+<li>If My Telescope times are set, the viewing period follows that saved initialize/stop window until a saved plan takes over.</li>
+<li>The glass Date and Time Period Forecast card lists the active observing date and time range.</li>
+<li>The Sun/Moon glass card shows Sunset, Sunrise, Bortle/SQM, and time of total darkness based on the saved location.</li>
+<li>Bortle/SQM is estimated from the saved latitude, longitude, elevation, and nearby population light-pressure reference used by the app.</li>
+<li>The compact Source row names the weather source and includes Update to reload the hourly data.</li>
+<li>Hourly rows list time, icon, cloud percentage, rain chance, barometric pressure with trend arrow, temperature, and dew point.</li>
+<li>Night icons use crescent moon and cloud symbols. Daylight hours use sun and cloud symbols between sunrise and sunset.</li>
+<li>The Done action is kept above the menu bar on iPhone.</li>
+<li>If no valid location is saved, weather cannot calculate local conditions. Return to Locations and save a valid site.</li>
+</ul>
+<h2>Set Up</h2>
+<p class="shot">Screenshot: Set Up (<code>Screenshots/UserGuide/Level1/08-set-up-top-level.png</code>)</p>
+<ul>
+<li>Set Up contains language, unit preference, internet permission, data update actions, and About This App.</li>
+<li>Internet-required actions are labeled.</li>
+<li>Target and smart telescope database updates are user-started.</li>
+<li>Target Database Update summarizes changed transients, lists their names, and shows pulled-and-stored asteroid and comet names such as Ceres and Vesta.</li>
+<li>The app keeps data on the device. Internet access is used for updates and lookups, not remote storage of app data.</li>
+<li>About This App opens controlled in-app web windows for off-site privacy, support, and reference pages.</li>
+</ul>
+<h2>Help and Clock Support</h2>
+<p class="shot">Screenshot: Help (<code>Screenshots/UserGuide/Level1/06-help-top-level.png</code>)</p>
+<ul>
+<li>Open Help from the question mark icon in the bottom menu bar.</li>
+<li>Help mirrors the major manual sections with embedded screenshots.</li>
+<li>The help content includes first-, second-, and third-level flows.</li>
+</ul>
+<p class="shot">Screenshot: Clock support detail (<code>Screenshots/UserGuide/Level3/02-help-clock-support.png</code>)</p>
+<ul>
+<li>Displayed times follow the iPhone or iPad clock preference.</li>
+<li>Time entry accepts common 12-hour and 24-hour formats.</li>
+<li>HHMM entry such as <code>2000</code> is accepted anywhere the app asks for telescope or observation times.</li>
+</ul>
+<h2>Appearance and Text Scaling</h2>
+<ul>
+<li>Light and Dark appearance follow the system setting through <code>UIUserInterfaceStyle = Automatic</code> and SwiftUI <code>colorScheme</code>-aware styling.</li>
+<li>Standard SwiftUI text styles such as body, headline, subheadline, caption, and footnote participate in Apple text scaling automatically.</li>
+<li>Compact dashboard, tab, chart, and badge labels still use some fixed-size layout fonts so the interface can preserve dense observing data. These are the remaining candidates for a future Dynamic Type pass using relative fonts, <code>@ScaledMetric</code>, and larger-size layout testing.</li>
+<li>The app includes <code>AppTextOverflowGuard</code> for focused text-fit checks during development.</li>
+</ul>
+<h2>Troubleshooting</h2>
+<h3>No Targets Appear</h3>
+<ul>
+<li>Confirm a default location is saved.</li>
+<li>Confirm the telescope observing window is set if you are filtering by time.</li>
+<li>Set required red Catalog, Time, or Filter cards, then use Apply Filters inside the popup.</li>
+<li>Loosen magnitude, altitude, azimuth, and object-type settings.</li>
+<li>Check obstruction ranges. A target inside an obstruction range is intentionally removed.</li>
+</ul>
+<h3>Asteroids Or Comets Look Stale</h3>
+<ul>
+<li>Run Target Database Update from Set Up.</li>
+<li>Review the update summary for Small bodies updated, Pulled and stored, and Changed transients.</li>
+<li>Stale transient target cards cannot be used until data is refreshed.</li>
+</ul>
+<h3>Weather Is Blank Or Wrong For The Site</h3>
+<ul>
+<li>Save a valid default location first.</li>
+<li>Confirm latitude and longitude are present.</li>
+<li>Add elevation when available so pressure can be adjusted for the site.</li>
+<li>Confirm internet permission is enabled for weather prediction data.</li>
+</ul>
+<h3>Location Entry Will Not Save</h3>
+<ul>
+<li>Enter a Location Name.</li>
+<li>Use GPS or enter latitude and longitude manually.</li>
+<li>If GPS was used, address fields are optional.</li>
+<li>If manual address is used, choose Country first so fields match the country format.</li>
+</ul>
+<h3>Numeric Keypad Covers The Target Card</h3>
+<ul>
+<li>Dismiss the keypad after entering the value.</li>
+<li>Scroll the target page so cards pass under the filter panel.</li>
+<li>Reopen Advanced Filters only when more values must be changed.</li>
+</ul>
+<h3>Plan Load Is Confusing</h3>
+<ul>
+<li>After loading a saved plan, watch for the <code>Plan Loaded</code> prompt.</li>
+<li>Choose Yes to add more targets.</li>
+<li>Choose No to return to Planner.</li>
+<li>Yellow plan name and yellow loaded-plan status text identify the active loaded plan.</li>
+</ul>
+<h3>Print Or PDF Does Not Appear</h3>
+<ul>
+<li>Confirm at least one target is in the plan.</li>
+<li>Use Preview first to confirm the plan content.</li>
+<li>Confirm the default plan folder setting if you expect exported plans to appear in Files.</li>
+<li>Try Share Plan if the device print sheet is not available.</li>
+</ul>
+<h2>Code Annotations</h2>
+<ul>
+<li><code>AstronomyObservationPlanningIOSApp</code> owns the top-level launch gate: it records the first launch date, allows a 30-day test window, presents the friendly App Store purchase prompt after expiration, and then routes active users to privacy/first-start or the main shell.</li>
+<li><code>MobileShellView</code> owns the iOS tab shell, system light/dark adaptation, compact Home header, Home settings data card, first-start setup, persisted internet/privacy setup status, pinned first-start Finish and Setup Checklist cards, in-app help content, and page routing.</li>
+<li><code>FirstStartSetupView</code> owns dimmed completed setup actions, collapsible setup checklist details, primary location auto-scroll, telescope-card collapse after save, and plan-folder completion state.</li>
+<li><code>ObservationLocationEditorCard</code> owns location name, GPS, country-first address entry, optional address labels after GPS, elevation, save, Set Default, Delete Location, and default-location behavior.</li>
+<li><code>TargetDatabaseScreen</code> owns the two-control Target Setup top row, catalog scope, My Telescope observing-window defaults, filters, advanced filters, obstruction filtering, target cards, and Add to Planner routing.</li>
+<li><code>TargetDatabaseHeaderView</code> owns the Catalog, Time, and Filter popup action cards, including per-popup Apply and Cancel behavior.</li>
+<li><code>ObservationPlannerScreen</code> owns loaded-plan prompts, highlighted loaded-plan status, spreadsheet-style PDF/print rows, Preview PDF, Save PDF, Print Plan, Delete Plan, Share Plan, sort, and plan load/save behavior.</li>
+<li><code>PlanSaveFolderPreferenceStorage</code> owns the default Files folder bookmark used when saving plan text files and PDFs, with share-sheet fallback when a folder is not available.</li>
+<li><code>WeatherAndSkyInfoScreen</code> owns the viewing-period, My Telescope fallback window, sun/moon, compact source/update header, hourly weather rows, pressure trend, elevation-adjusted pressure, unit preference, and location-dependent weather display.</li>
+<li><code>MobileHelpSheet</code> mirrors this manual at a shorter in-app level, includes appearance/text-scaling notes, and loads screenshots from <code>Sources/Core/Resources/HelpScreenshots</code>.</li>
+<li><code>MobileGlassTabBarBackground</code> and <code>MobileMenuBarStyle</code> own the adaptive bottom tab material, selected/unselected icon colors, and light/dark glass treatments.</li>
+<li><code>AppTextOverflowGuard</code> provides development-time text overflow checks for high-risk compact labels.</li>
+</ul>
+<h2>Logic Flow Export</h2>
+<p>The full multi-page logic flow is exported as:</p>
+<ul>
+<li><code>Documentation/iOS-Logic-Flow-Overview.html</code></li>
+<li><code>Documentation/iOS-Logic-Flow-Overview.pdf</code></li>
+</ul>
+</body></html>
