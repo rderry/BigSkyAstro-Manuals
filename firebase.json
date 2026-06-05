@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "site": "bigskyastro-23b2a",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      ".git",
+      ".git/**"
+    ]
+  }
+}
