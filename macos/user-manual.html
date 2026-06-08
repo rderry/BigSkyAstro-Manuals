@@ -142,6 +142,29 @@
       margin: 16px 0;
     }
 
+    .manual-figure {
+      margin: 18px 0 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0b1324;
+      box-shadow: 0 16px 46px rgba(15, 23, 42, 0.18);
+    }
+
+    .manual-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .manual-figure figcaption {
+      margin: 0;
+      padding: 12px 14px;
+      background: #f8fbff;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
     .workflow {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -240,6 +263,7 @@
         <nav class="nav" aria-label="Manual navigation">
           <a href="../index.html">Manual home</a>
           <a href="../ios/user-manual.html">iOS manual</a>
+          <a href="../feedback.html">Feedback</a>
           <a href="#quick-start">Quick start</a>
           <a href="#locations">Locations</a>
           <a href="#equipment">Equipment</a>
@@ -252,7 +276,7 @@
       <p class="lede">Desktop guide for the macOS beta build. This manual is separate from the iPhone and iPad manual because the Mac app uses a wider workspace, desktop action buttons, pop-up editing windows, and Mac-specific privacy, location, export, and review behavior.</p>
       <div class="meta">
         <span>Version 1.1 Beta</span>
-        <span>Build 4</span>
+        <span>Build 5</span>
         <span>macOS</span>
         <span>BigSkyAstro</span>
       </div>
@@ -269,6 +293,10 @@
           <div class="step"><strong>3. Equipment</strong>Choose the visible telescope and one or more compatible accessories.</div>
           <div class="step"><strong>4. Plan</strong>Filter targets, block sky areas, assign observing times, and review the plan.</div>
         </div>
+        <figure class="manual-figure">
+          <img src="manual-assets/02-home.svg" alt="Home workspace with Setup Locations, Telescope, Target Database, and Plan Observation cards.">
+          <figcaption>The Home workspace is the starting point after first-start setup. Use the workflow cards from left to right when preparing a new observing session.</figcaption>
+        </figure>
       </section>
 
       <section id="first-launch">
@@ -280,6 +308,10 @@
           <li>Location permission is separate from internet acceptance and is controlled by macOS Location Services.</li>
           <li>If online access is declined or unavailable, bundled/local planning data can still be used for basic planning.</li>
         </ul>
+        <figure class="manual-figure">
+          <img src="manual-assets/01-first-launch.svg" alt="First Start Setup screen with Privacy Statement, Internet Setup, Location Permission, and Continue Setup.">
+          <figcaption>First launch has four decisions: review privacy, choose online refresh behavior, allow or skip location-assisted setup, and pick the preferred language.</figcaption>
+        </figure>
         <div class="callout">For review and testing, start from a clean data state when verifying this page so the retained setup-complete flag does not hide the first-launch workflow.</div>
       </section>
 
@@ -307,6 +339,10 @@
           <li><strong>Create Your Custom Target Database:</strong> choose catalog and filter limits for local targets.</li>
           <li><strong>Plan an Observation:</strong> open the observing plan workspace for the selected night and location.</li>
         </ul>
+        <figure class="manual-figure">
+          <img src="manual-assets/02-home.svg" alt="Home workspace showing the main desktop workflow cards.">
+          <figcaption>Use the toolbar for direct navigation, or use the Home cards to follow the recommended setup order.</figcaption>
+        </figure>
       </section>
 
       <section id="locations">
@@ -321,6 +357,10 @@
         </ul>
         <h3>Validation</h3>
         <p>Check that latitude, longitude, elevation, country, and time zone are filled before continuing. If a location already exists, select it instead of creating duplicate site records.</p>
+        <figure class="manual-figure">
+          <img src="manual-assets/03-locations.svg" alt="Setup Locations page with location entry fields and saved observing sites.">
+          <figcaption>Location setup feeds every sky calculation. Save the site, then mark the primary observing location as default.</figcaption>
+        </figure>
       </section>
 
       <section id="equipment">
@@ -336,11 +376,19 @@
           <li>Use Plan an Observation to move directly into the planning workspace.</li>
         </ul>
         <p>Smart telescope users can choose the smart telescope directly. Non-smart or custom equipment can be tracked as a separate setup when the beta exposes that equipment entry flow.</p>
+        <figure class="manual-figure">
+          <img src="manual-assets/04-equipment.svg" alt="Telescope and accessories page with visible telescope, compatible accessories, and next-step actions.">
+          <figcaption>Choose the telescope visible for the night, add compatible accessories, then save that combination as the default when it should be reused.</figcaption>
+        </figure>
       </section>
 
       <section id="targets">
         <h2>Target Database Filter</h2>
         <p>The Target Database Filter controls the visible target list for the plan. The filter label opens the observation windows and limits as a pop-up instead of taking over the full card.</p>
+        <figure class="manual-figure">
+          <img src="manual-assets/05-target-database.svg" alt="Custom target database builder with catalog choices, magnitude limit, and Build Catalog control.">
+          <figcaption>The custom target database builder lets the Mac app create a local planning catalog matched to selected catalog families and magnitude limits.</figcaption>
+        </figure>
         <h3>Observation Windows And Limits Pop-Up</h3>
         <ul>
           <li>Open the filter link to edit limits in a focused pop-up.</li>
@@ -351,6 +399,10 @@
         <h3>Blocked Sky Areas</h3>
         <p>After Apply, the app can ask whether another object area should be blocked out. Add blocked regions with azimuth from/to and altitude from/to values, or cancel to keep only the current filter. Added blocked areas appear under the first entry so the user can see each excluded sky region.</p>
         <p>The Planning Catalog card also reminds the user to double-click a target below to see an example.</p>
+        <figure class="manual-figure">
+          <img src="manual-assets/06-filter-popup.svg" alt="Observation Window and Limits popup with date, magnitude, altitude, azimuth, blocked sky area, and Apply controls.">
+          <figcaption>Use the filter popup to edit values as a draft, then Apply when the target list should update.</figcaption>
+        </figure>
       </section>
 
       <section id="planning">
@@ -363,6 +415,10 @@
           <li>Use planned observation windows to avoid low-altitude or blocked regions.</li>
           <li>Review the final plan before saving or exporting.</li>
         </ul>
+        <figure class="manual-figure">
+          <img src="manual-assets/07-planning.svg" alt="Plan an Observation page with filtered target rows and target detail panel.">
+          <figcaption>Review target altitude, weather, blocked-area status, and planned timing before adding targets to the observing plan.</figcaption>
+        </figure>
       </section>
 
       <section id="exports">
@@ -374,11 +430,16 @@
           <li>Use exported PDFs or printed plans for field use.</li>
           <li>Keep beta feedback focused on repeatable steps, visible result, and expected result.</li>
         </ul>
+        <figure class="manual-figure">
+          <img src="manual-assets/08-export.svg" alt="Review, export, and logs page with Save Plan, Print PDF Report, Create Observation Log, and Send Feedback actions.">
+          <figcaption>After planning, review the session and use print/export/log actions for field use and follow-up.</figcaption>
+        </figure>
       </section>
 
       <section id="support">
         <h2>Support Notes</h2>
         <p>When reporting beta feedback, include the macOS version, app version/build, whether the setup-complete privacy page was already accepted, the selected location, selected telescope/accessories, and the page where the issue occurred.</p>
+        <p>Use the <a href="../feedback.html">website feedback form</a> and choose <strong>Astronomy Observation Planner macOS Beta (Build 5)</strong> so the report is routed as Mac beta feedback.</p>
         <p>This manual is intentionally separate from the iOS manual. iPhone and iPad users should use the <a href="../ios/user-manual.html">BigSky Planner iOS Manual</a>.</p>
       </section>
     </main>

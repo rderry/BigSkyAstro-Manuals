@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Telescope and accessories</title>
+  <desc id="desc">Illustration of selecting a smart telescope and multiple compatible accessories.</desc>
+  <rect width="1280" height="760" fill="#07111f"/>
+  <rect x="82" y="68" width="1116" height="624" rx="26" fill="#f8fbff"/>
+  <text x="126" y="132" fill="#1f5fbf" font-family="Aptos, Helvetica, Arial" font-size="36" font-weight="900">Telescope and Accessories</text>
+  <g font-family="Aptos, Helvetica, Arial">
+    <rect x="126" y="190" width="340" height="438" rx="18" fill="#edf5ff" stroke="#c9d6ea"/>
+    <text x="156" y="240" fill="#244a7f" font-size="27" font-weight="900">Visible Telescope</text>
+    <rect x="156" y="282" width="270" height="76" rx="12" fill="#102b58"/><text x="180" y="328" fill="#ffdc55" font-size="22" font-weight="900">Vespera Pro</text>
+    <rect x="156" y="382" width="270" height="76" rx="12" fill="#fff" stroke="#c8d3e6"/><text x="180" y="428" fill="#536071" font-size="22">Celestron Origin</text>
+    <rect x="510" y="190" width="340" height="438" rx="18" fill="#fff8da" stroke="#e9c95f"/>
+    <text x="540" y="240" fill="#986f00" font-size="27" font-weight="900">Compatible Accessories</text>
+    <rect x="540" y="282" width="270" height="58" rx="12" fill="#fff" stroke="#e0c86a"/><text x="566" y="318" fill="#10213a" font-size="20" font-weight="900">Dual Band Filter</text>
+    <rect x="540" y="358" width="270" height="58" rx="12" fill="#fff" stroke="#e0c86a"/><text x="566" y="394" fill="#10213a" font-size="20" font-weight="900">CLS Filter</text>
+    <rect x="540" y="486" width="270" height="50" rx="10" fill="#ffdc55"/><text x="675" y="519" text-anchor="middle" fill="#10213a" font-size="20" font-weight="900">Set as Default</text>
+    <rect x="894" y="190" width="260" height="438" rx="18" fill="#edf5ff" stroke="#c9d6ea"/>
+    <text x="924" y="240" fill="#244a7f" font-size="27" font-weight="900">Next Step</text>
+    <rect x="924" y="292" width="190" height="54" rx="10" fill="#1f5fbf"/><text x="1019" y="326" text-anchor="middle" fill="#fff" font-size="19" font-weight="900">Target DB</text>
+    <rect x="924" y="372" width="190" height="54" rx="10" fill="#ffdc55"/><text x="1019" y="406" text-anchor="middle" fill="#10213a" font-size="19" font-weight="900">Plan</text>
+  </g>
+</svg>

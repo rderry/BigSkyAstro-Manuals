@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Target database filter popup</title>
+  <desc id="desc">Illustration of target filter popup controls for observation time, magnitude, altitude, azimuth, and blocked sky areas.</desc>
+  <rect width="1280" height="760" fill="#0b1324"/>
+  <rect x="90" y="74" width="1090" height="612" rx="28" fill="#f8fbff"/>
+  <rect x="142" y="134" width="984" height="96" rx="20" fill="#edf5ff" stroke="#c9d6ea"/>
+  <text x="182" y="192" fill="#1f5fbf" font-family="Aptos, Helvetica, Arial" font-size="32" font-weight="900">Target Database Filters</text>
+  <rect x="272" y="266" width="736" height="410" rx="28" fill="#102b58" stroke="#ffdc55" stroke-width="3"/>
+  <g font-family="Aptos, Helvetica, Arial">
+    <text x="322" y="326" fill="#ffdc55" font-size="30" font-weight="900">Observation Window and Limits</text>
+    <rect x="322" y="366" width="260" height="48" rx="8" fill="#fff"/><text x="342" y="397" fill="#536071" font-size="18">Date and time</text>
+    <rect x="612" y="366" width="260" height="48" rx="8" fill="#fff"/><text x="632" y="397" fill="#536071" font-size="18">Magnitude limit</text>
+    <rect x="322" y="438" width="260" height="48" rx="8" fill="#fff"/><text x="342" y="469" fill="#536071" font-size="18">Altitude low / high</text>
+    <rect x="612" y="438" width="260" height="48" rx="8" fill="#fff"/><text x="632" y="469" fill="#536071" font-size="18">Azimuth low / high</text>
+    <rect x="322" y="526" width="550" height="46" rx="8" fill="#fff8da" stroke="#ffdc55"/><text x="342" y="556" fill="#10213a" font-size="18">Blocked sky area: trees, roofline, horizon, building</text>
+    <rect x="612" y="606" width="170" height="52" rx="10" fill="#ffdc55"/><text x="697" y="639" text-anchor="middle" fill="#10213a" font-size="20" font-weight="900">Apply</text>
+  </g>
+</svg>

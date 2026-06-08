@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">First launch privacy setup</title>
+  <desc id="desc">Illustration of the macOS first start setup screen with privacy, internet, location, and language sections.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#07152f"/><stop offset="1" stop-color="#244d86"/></linearGradient>
+    <linearGradient id="gold" x1="0" x2="1"><stop stop-color="#ffe878"/><stop offset="1" stop-color="#f2b633"/></linearGradient>
+  </defs>
+  <rect width="1280" height="760" fill="url(#bg)"/>
+  <circle cx="1080" cy="120" r="190" fill="#89b9ff" opacity=".16"/>
+  <rect x="180" y="92" width="920" height="566" rx="34" fill="#ffffff" opacity=".12" stroke="#ffffff" stroke-opacity=".28"/>
+  <text x="230" y="160" fill="#ffdc55" font-family="Aptos, Helvetica, Arial" font-size="42" font-weight="800">First Start Setup</text>
+  <text x="230" y="204" fill="#eef6ff" font-family="Aptos, Helvetica, Arial" font-size="22">Review privacy, online refresh, location, and language before using this Mac.</text>
+  <g font-family="Aptos, Helvetica, Arial">
+    <rect x="230" y="250" width="820" height="78" rx="18" fill="#ffffff" opacity=".14" stroke="#ffffff" stroke-opacity=".24"/>
+    <circle cx="265" cy="289" r="15" fill="url(#gold)"/><path d="M257 290l6 6 13-18" fill="none" stroke="#0e274a" stroke-width="5" stroke-linecap="round"/>
+    <text x="300" y="282" fill="#ffdc55" font-size="24" font-weight="800">Privacy Statement</text>
+    <text x="300" y="308" fill="#eef6ff" font-size="18">Confirm local storage and optional online-service behavior.</text>
+    <rect x="230" y="350" width="820" height="78" rx="18" fill="#ffffff" opacity=".14" stroke="#ffffff" stroke-opacity=".24"/>
+    <circle cx="265" cy="389" r="15" fill="url(#gold)"/><path d="M257 390l6 6 13-18" fill="none" stroke="#0e274a" stroke-width="5" stroke-linecap="round"/>
+    <text x="300" y="382" fill="#ffdc55" font-size="24" font-weight="800">Internet Setup</text>
+    <text x="300" y="408" fill="#eef6ff" font-size="18">Choose online refresh or local-only startup.</text>
+    <rect x="230" y="450" width="820" height="78" rx="18" fill="#ffffff" opacity=".14" stroke="#ffffff" stroke-opacity=".24"/>
+    <circle cx="265" cy="489" r="15" fill="url(#gold)"/><path d="M257 490l6 6 13-18" fill="none" stroke="#0e274a" stroke-width="5" stroke-linecap="round"/>
+    <text x="300" y="482" fill="#ffdc55" font-size="24" font-weight="800">Location Permission</text>
+    <text x="300" y="508" fill="#eef6ff" font-size="18">Allow location-assisted setup, or enter coordinates manually later.</text>
+    <rect x="230" y="550" width="820" height="58" rx="18" fill="#ffdc55"/>
+    <text x="640" y="586" text-anchor="middle" fill="#0e274a" font-size="24" font-weight="900">Continue Setup</text>
+  </g>
+</svg>

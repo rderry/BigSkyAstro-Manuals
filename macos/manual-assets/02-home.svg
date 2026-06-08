@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Home workspace</title>
+  <desc id="desc">Illustration of the macOS home workspace with toolbar sections and main workflow cards.</desc>
+  <rect width="1280" height="760" fill="#0a1428"/>
+  <rect x="70" y="58" width="1140" height="644" rx="28" fill="#f8fbff"/>
+  <rect x="70" y="58" width="1140" height="72" rx="28" fill="#102b58"/>
+  <text x="112" y="104" fill="#ffdc55" font-family="Aptos, Helvetica, Arial" font-size="28" font-weight="900">Astronomy Observation Planner</text>
+  <g fill="#d8e5ff" font-family="Aptos, Helvetica, Arial" font-size="18" font-weight="800">
+    <text x="592" y="104">Home</text><text x="670" y="104">Locations</text><text x="790" y="104">Telescope</text><text x="915" y="104">Plan</text><text x="1010" y="104">Logs</text>
+  </g>
+  <text x="112" y="178" fill="#123" font-family="Aptos, Helvetica, Arial" font-size="34" font-weight="900">Home Workspace</text>
+  <text x="112" y="212" fill="#586575" font-family="Aptos, Helvetica, Arial" font-size="20">Use the desktop cards to move through setup, equipment, target database, and planning.</text>
+  <g font-family="Aptos, Helvetica, Arial">
+    <rect x="112" y="256" width="250" height="190" rx="14" fill="#edf5ff" stroke="#c9d6ea"/>
+    <text x="134" y="302" fill="#1f5fbf" font-size="25" font-weight="900">Setup Locations</text>
+    <text x="134" y="342" fill="#465366" font-size="18">Create or select a default observing site.</text>
+    <rect x="390" y="256" width="250" height="190" rx="14" fill="#edf5ff" stroke="#c9d6ea"/>
+    <text x="412" y="302" fill="#1f5fbf" font-size="25" font-weight="900">Telescope</text>
+    <text x="412" y="342" fill="#465366" font-size="18">Choose the visible smart telescope and accessories.</text>
+    <rect x="668" y="256" width="250" height="190" rx="14" fill="#edf5ff" stroke="#c9d6ea"/>
+    <text x="690" y="302" fill="#1f5fbf" font-size="25" font-weight="900">Target Database</text>
+    <text x="690" y="342" fill="#465366" font-size="18">Build the local target catalog for your sky.</text>
+    <rect x="946" y="256" width="250" height="190" rx="14" fill="#fff8da" stroke="#e9c95f"/>
+    <text x="968" y="302" fill="#986f00" font-size="25" font-weight="900">Plan Observation</text>
+    <text x="968" y="342" fill="#465366" font-size="18">Filter, schedule, save, and print the session.</text>
+    <rect x="112" y="488" width="1084" height="94" rx="18" fill="#102b58"/>
+    <text x="142" y="546" fill="#ffdc55" font-size="26" font-weight="900">Tip</text>
+    <text x="202" y="546" fill="#eef6ff" font-size="20">Start with Locations, then Telescope, then Target Database or Plan.</text>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Plan an observation</title>
+  <desc id="desc">Illustration of a planning workspace with filtered target rows, visibility data, and selected target details.</desc>
+  <rect width="1280" height="760" fill="#07111f"/>
+  <rect x="70" y="62" width="1140" height="636" rx="26" fill="#f8fbff"/>
+  <text x="112" y="126" fill="#1f5fbf" font-family="Aptos, Helvetica, Arial" font-size="36" font-weight="900">Plan an Observation</text>
+  <g font-family="Aptos, Helvetica, Arial">
+    <rect x="112" y="176" width="760" height="482" rx="18" fill="#edf5ff" stroke="#c9d6ea"/>
+    <text x="142" y="226" fill="#244a7f" font-size="27" font-weight="900">Filtered Targets</text>
+    <rect x="142" y="260" width="700" height="54" rx="8" fill="#102b58"/><text x="164" y="295" fill="#ffdc55" font-size="19" font-weight="900">M31 Andromeda Galaxy</text><text x="660" y="295" fill="#fff" font-size="18">Alt 62°</text>
+    <rect x="142" y="332" width="700" height="54" rx="8" fill="#fff" stroke="#c8d3e6"/><text x="164" y="367" fill="#10213a" font-size="19" font-weight="900">M45 Pleiades</text><text x="660" y="367" fill="#536071" font-size="18">Alt 45°</text>
+    <rect x="142" y="404" width="700" height="54" rx="8" fill="#fff" stroke="#c8d3e6"/><text x="164" y="439" fill="#10213a" font-size="19" font-weight="900">IC 405 Flaming Star</text><text x="660" y="439" fill="#536071" font-size="18">Alt 38°</text>
+    <rect x="142" y="548" width="210" height="52" rx="10" fill="#ffdc55"/><text x="247" y="581" text-anchor="middle" fill="#10213a" font-size="20" font-weight="900">Add Target</text>
+    <rect x="910" y="176" width="260" height="482" rx="18" fill="#fff8da" stroke="#e9c95f"/>
+    <text x="940" y="226" fill="#986f00" font-size="27" font-weight="900">Target Detail</text>
+    <text x="940" y="284" fill="#10213a" font-size="20">Type: Galaxy</text>
+    <text x="940" y="330" fill="#10213a" font-size="20">Magnitude: 3.4</text>
+    <text x="940" y="376" fill="#10213a" font-size="20">Best time: 22:45</text>
+    <text x="940" y="422" fill="#10213a" font-size="20">Weather: usable</text>
+    <text x="940" y="468" fill="#10213a" font-size="20">Blocked: clear</text>
+  </g>
+</svg>

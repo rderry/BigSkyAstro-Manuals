@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Setup locations</title>
+  <desc id="desc">Illustration of location setup with manual coordinates, address lookup, elevation, and saved site list.</desc>
+  <rect width="1280" height="760" fill="#10233e"/>
+  <rect x="86" y="68" width="1092" height="624" rx="26" fill="#f9fbff"/>
+  <text x="126" y="130" fill="#1f5fbf" font-family="Aptos, Helvetica, Arial" font-size="36" font-weight="900">Setup Locations</text>
+  <text x="126" y="166" fill="#586575" font-family="Aptos, Helvetica, Arial" font-size="20">Create an observing site with coordinates, elevation, time zone, and Bortle context.</text>
+  <g font-family="Aptos, Helvetica, Arial">
+    <rect x="126" y="214" width="500" height="410" rx="18" fill="#edf5ff" stroke="#c9d6ea"/>
+    <text x="156" y="262" fill="#244a7f" font-size="27" font-weight="900">Location Entry</text>
+    <rect x="156" y="292" width="380" height="42" rx="8" fill="#fff" stroke="#c8d3e6"/><text x="174" y="320" fill="#536071" font-size="18">Site name</text>
+    <rect x="156" y="352" width="180" height="42" rx="8" fill="#fff" stroke="#c8d3e6"/><text x="174" y="380" fill="#536071" font-size="18">Latitude</text>
+    <rect x="356" y="352" width="180" height="42" rx="8" fill="#fff" stroke="#c8d3e6"/><text x="374" y="380" fill="#536071" font-size="18">Longitude</text>
+    <rect x="156" y="412" width="180" height="42" rx="8" fill="#fff" stroke="#c8d3e6"/><text x="174" y="440" fill="#536071" font-size="18">Elevation</text>
+    <rect x="356" y="412" width="180" height="42" rx="8" fill="#fff" stroke="#c8d3e6"/><text x="374" y="440" fill="#536071" font-size="18">Bortle</text>
+    <rect x="156" y="492" width="220" height="50" rx="10" fill="#ffdc55"/><text x="266" y="524" text-anchor="middle" fill="#10213a" font-size="20" font-weight="900">Add to Location DB</text>
+    <rect x="658" y="214" width="482" height="410" rx="18" fill="#fff8da" stroke="#e9c95f"/>
+    <text x="688" y="262" fill="#986f00" font-size="27" font-weight="900">Saved Sites</text>
+    <rect x="688" y="300" width="390" height="68" rx="10" fill="#fff" stroke="#e0c86a"/>
+    <text x="710" y="330" fill="#10213a" font-size="20" font-weight="900">Tahoe Dark Site</text>
+    <text x="710" y="354" fill="#536071" font-size="16">Default • WGS84 • Mountain time</text>
+    <rect x="688" y="392" width="390" height="68" rx="10" fill="#fff" stroke="#d9e1ee"/>
+    <text x="710" y="422" fill="#10213a" font-size="20" font-weight="900">Backyard</text>
+    <text x="710" y="446" fill="#536071" font-size="16">Manual coordinates • editable</text>
+    <path d="M596 348h72" stroke="#1f5fbf" stroke-width="5" marker-end="url(#arrow)"/>
+  </g>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8z" fill="#1f5fbf"/></marker></defs>
+</svg>
