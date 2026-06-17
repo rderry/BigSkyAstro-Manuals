@@ -617,10 +617,10 @@
       <div class="cover-copy">
         <p class="cover-kicker">iPhone and iPad Guide</p>
         <h1>BigSky Planner iOS User Manual</h1>
-        <p class="lede">A screenshot-guided manual for BigSky Planner iOS Release 1.3.1 (1), covering setup, locations, telescope, targets, planner, weather, updates, and troubleshooting.</p>
+        <p class="lede">A screenshot-guided manual for BigSky Planner iOS Release 1.3.1 (17), covering setup, locations, telescope, targets, planner, weather, updates, and troubleshooting.</p>
         <div class="meta">
-          <span>Release: 1.3.1 (1)</span>
-          <span>Updated: 2026-05-30</span>
+          <span>Release: 1.3.1 (17)</span>
+          <span>Updated: 2026-06-17</span>
         </div>
         <div class="cover-topics" aria-label="Manual highlights">
           <span>Set up the observing site</span>
@@ -649,7 +649,7 @@
           <li><a href="#locations"><span><strong>Locations</strong><span>GPS, manual entry, Address Info, default site, elevation, scrolling, and canceling a new location.</span></span></a></li>
           <li><a href="#telescope"><span><strong>Telescope</strong><span>Smart telescope and accessory selection used in observing plans.</span></span></a></li>
           <li><a href="#targets"><span><strong>Target Setup</strong><span>Catalog, Time, Filter, Current Setup, red/green card status, and stale target update behavior.</span></span></a></li>
-          <li><a href="#advanced-filters"><span><strong>Advanced Filters and Results</strong><span>Magnitude, altitude, azimuth, object types, Clear Sky ranges, obstructions, and validation.</span></span></a></li>
+          <li><a href="#advanced-filters"><span><strong>Advanced Filters and Results</strong><span>Magnitude, altitude, azimuth, object types, Clear Sky ranges, duration, target details, and validation.</span></span></a></li>
           <li><a href="#observation-time"><span><strong>Observation Time</strong><span>Target start/stop time, after-midnight handling, and overlap checks.</span></span></a></li>
           <li><a href="#planner"><span><strong>Planner</strong><span>Review targets, sort, save, preview, print, share, load, and delete plans.</span></span></a></li>
           <li><a href="#weather"><span><strong>Weather and Sky Info</strong><span>Date/time period, source, Update, Sunset, Sunrise, Bortle/SQM, darkness, and hourly forecast rows.</span></span></a></li>
@@ -761,12 +761,33 @@
             <li>Obstruction ranges remove blocked azimuth or altitude areas from target candidates.</li>
             <li>Clear Sky filter ranges can be added one after another without closing the card, and a new range can be canceled before saving.</li>
             <li>Apply Filter validates required fields. If data is invalid, the app asks for the missing or corrected answer.</li>
+            <li>Duration in View is in the Filter popup Display section. After Apply Filters, target cards show <code>Dur: HH:MM</code> beside the first usable window.</li>
+            <li>Details expands a target card to show Min, Opt, and Best capture-duration guidance for the saved default telescope while leaving Check, Sample, and Add Plan available.</li>
             <li>Use Add to Planner for unscheduled targets or Go to Planner for targets already in the plan.</li>
           </ul>
         </div>
         <figure class="screenshot">
           <img src="manual-assets-web/UserGuide/Level2/01-targets-advanced-filters.jpg" alt="Advanced target filters">
           <figcaption>Advanced target filter controls.</figcaption>
+        </figure>
+      </section>
+
+      <section class="grid" id="target-duration-details">
+        <div>
+          <h2>Duration and Target Details</h2>
+          <ul>
+            <li>Turn on Duration in View when you want each card to show how long the target stays inside the applied observing window.</li>
+            <li>Tap Details on a target card to double the card height and reveal capture guidance for the default telescope.</li>
+            <li>The Details panel includes unfiltered and filtered capture notes so broadband galaxies, nebulae, clusters, and Solar System targets can be interpreted differently.</li>
+          </ul>
+        </div>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level2/04-target-duration-filter.jpg" alt="Duration in View filter">
+          <figcaption>Duration in View adds <code>Dur: HH:MM</code> to target cards.</figcaption>
+        </figure>
+        <figure class="screenshot">
+          <img src="manual-assets-web/UserGuide/Level2/05-target-details-duration.jpg" alt="Expanded target details">
+          <figcaption>Details expands the target card with capture guidance while preserving plan actions.</figcaption>
         </figure>
       </section>
 
@@ -948,7 +969,7 @@
       </section>
     </main>
 
-    <p class="footer">BigSkyAstro - BigSky Planner iOS User Manual - Release 1.3.1 (1)</p>
+    <p class="footer">BigSkyAstro - BigSky Planner iOS User Manual - Release 1.3.1 (17)</p>
   </div>
 </body>
 </html>

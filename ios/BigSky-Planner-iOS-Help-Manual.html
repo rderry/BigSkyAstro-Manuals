@@ -1,7 +1,7 @@
 <!doctype html><html><head><meta charset="utf-8"><title>BigSky Planner iOS Help Manual</title><style>body{font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;margin:48px;line-height:1.45;color:#172033}h1{font-size:30px;border-bottom:2px solid #d7deea;padding-bottom:12px}h2{font-size:22px;margin-top:30px;border-bottom:1px solid #e6ebf2;padding-bottom:6px}h3{font-size:17px;margin-top:20px}code{font-family:Menlo,monospace;background:#f3f5f8;padding:1px 4px;border-radius:4px}li{margin:5px 0}p{margin:9px 0}.shot{color:#5a6680;font-style:italic}@page{size:auto;margin:0.6in}</style></head><body>
 <h1>BigSky Planner iOS User Manual</h1>
-<p>Release: 1.3.1 (1)</p>
-<p>Updated: 2026-05-30</p>
+<p>Release: 1.3.1 (17)</p>
+<p>Updated: 2026-06-17</p>
 <h2>Purpose</h2>
 <p>BigSky Planner for iPhone and iPad helps set up an observing location, choose telescope equipment and accessories, filter target catalogs, assign observation times, review weather and sky information, and export an observing plan.</p>
 <h2>First Start Setup</h2>
@@ -71,15 +71,21 @@
 <li>Clear Sky filter ranges can be added one after another without closing the card, and a new range can be canceled before saving.</li>
 <li>Returning to Advanced Filters activates Apply Filter even if values did not change, so you can rerun the current filter set.</li>
 <li>After applying filters, advanced options collapse and the target data is presented.</li>
+<li>The Display section includes Duration in View. Turn it on, apply filters, and target cards show <code>Dur: HH:MM</code> for the time each target remains visible inside the applied observing window.</li>
 </ul>
+<p class="shot">Screenshot: Duration in View filter (<code>Screenshots/UserGuide/Level2/04-target-duration-filter.png</code>)</p>
 <h2>Target Results</h2>
 <p class="shot">Screenshot: Filtered target results (<code>Screenshots/UserGuide/Level2/02-targets-filter-results.png</code>)</p>
 <ul>
 <li>Target cards show object type, magnitude, first usable time, altitude, and azimuth.</li>
+<li>When Duration in View is enabled, cards also show <code>Dur: HH:MM</code> beside the first usable window.</li>
+<li>Use Details to expand a target card. The expanded card stays usable for Check, Sample, and Add Plan while adding telescope-specific capture guidance.</li>
+<li>The Details panel shows Min, Opt, and Best integration times for the saved default telescope and notes whether an unfiltered or filtered capture makes sense for the target type.</li>
 <li>Use Add to Planner for a target that is not yet scheduled.</li>
 <li>Use Go to Planner for a target already added to the plan.</li>
 <li>Targets that fail obstruction, altitude, azimuth, magnitude, location, or time-window checks are removed from the candidate list.</li>
 </ul>
+<p class="shot">Screenshot: Expanded target details (<code>Screenshots/UserGuide/Level2/05-target-details-duration.png</code>)</p>
 <h2>Observation Time Sheet</h2>
 <p class="shot">Screenshot: Target observation time sheet (<code>Screenshots/UserGuide/Level3/01-target-observation-time-sheet.png</code>)</p>
 <ul>
@@ -205,8 +211,9 @@
 <li><code>MobileShellView</code> owns the iOS tab shell, system light/dark adaptation, compact Home header, Home settings data card, first-start setup, persisted internet/privacy setup status, pinned first-start Finish and Setup Checklist cards, in-app help content, and page routing.</li>
 <li><code>FirstStartSetupView</code> owns dimmed completed setup actions, collapsible setup checklist details, primary location auto-scroll, telescope-card collapse after save, and plan-folder completion state.</li>
 <li><code>ObservationLocationEditorCard</code> owns location name, GPS, country-first address entry, optional address labels after GPS, elevation, save, Set Default, Delete Location, and default-location behavior.</li>
-<li><code>TargetDatabaseScreen</code> owns the two-control Target Setup top row, catalog scope, My Telescope observing-window defaults, filters, advanced filters, obstruction filtering, target cards, and Add to Planner routing.</li>
+<li><code>TargetDatabaseScreen</code> owns the two-control Target Setup top row, catalog scope, My Telescope observing-window defaults, filters, advanced filters, obstruction filtering, optional duration-in-view display, target cards, and Add to Planner routing.</li>
 <li><code>TargetDatabaseHeaderView</code> owns the Catalog, Time, and Filter popup action cards, including per-popup Apply and Cancel behavior.</li>
+<li><code>TargetCaptureGuidance</code> owns the offline capture-duration guidance shown by the target-card Details panel, including Min, Opt, Best, with-filter, and without-filter text.</li>
 <li><code>ObservationPlannerScreen</code> owns loaded-plan prompts, highlighted loaded-plan status, spreadsheet-style PDF/print rows, Preview PDF, Save PDF, Print Plan, Delete Plan, Share Plan, sort, and plan load/save behavior.</li>
 <li><code>PlanSaveFolderPreferenceStorage</code> owns the default Files folder bookmark used when saving plan text files and PDFs, with share-sheet fallback when a folder is not available.</li>
 <li><code>WeatherAndSkyInfoScreen</code> owns the viewing-period, My Telescope fallback window, sun/moon, compact source/update header, hourly weather rows, pressure trend, elevation-adjusted pressure, unit preference, and location-dependent weather display.</li>
