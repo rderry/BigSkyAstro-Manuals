@@ -277,7 +277,7 @@
       <p class="lede">Desktop guide for the macOS build. This manual is separate from the iPhone and iPad manual because the Mac app uses a wider workspace, desktop action buttons, pop-up editing windows, and Mac-specific privacy, location, export, and review behavior.</p>
       <div class="meta">
         <span>Version 1.1</span>
-        <span>Build 8</span>
+        <span>Build 9</span>
         <span>macOS</span>
         <span>BigSkyAstro</span>
       </div>
@@ -302,11 +302,14 @@
 
       <section id="first-launch">
         <h2>First Launch Privacy And Internet Page</h2>
-        <p>On a clean start, the app opens with a privacy and internet access page. This page explains that online access is used for calculations and external resources such as catalog updates, location lookup, elevation lookup, weather, and sky conditions.</p>
+        <p>On a clean start, the app opens with a privacy, internet access, and location-use agreement page. Location is used only for alignment and observing-site planning. Online access is used for calculations and external resources such as catalog updates, location lookup, elevation lookup, weather, target imagery, and sky conditions.</p>
         <ul>
+          <li>The privacy, internet access, and location-use checkboxes must be accepted before setup continues.</li>
+          <li>After the agreements, a thank-you splash explains the 30-day free trial. The trial clock starts when Continue is selected on that splash.</li>
+          <li>A five-days-left reminder includes a support email link for feedback and feature requests.</li>
           <li>Accepting the page is retained, so it should not appear on every launch.</li>
           <li>The acceptance state can be reset during testing to verify the first-start flow.</li>
-          <li>Location permission is separate from internet acceptance and is controlled by macOS Location Services.</li>
+          <li>macOS Location Services permission is separate from the location-use agreement.</li>
           <li>If online access is declined or unavailable, bundled/local planning data can still be used for basic planning.</li>
         </ul>
         <figure class="manual-figure">
@@ -442,7 +445,7 @@
       <section id="support">
         <h2>Support Notes</h2>
         <p>When reporting feedback, include the macOS version, app version/build, whether the setup-complete privacy page was already accepted, the selected location, selected telescope/accessories, and the page where the issue occurred.</p>
-        <p>Use the <a href="../feedback.html">website feedback form</a> and choose <strong>Astronomy Observation Planner macOS (Build 8)</strong> so the report is routed as Mac release feedback.</p>
+        <p>Use the <a href="../feedback.html">website feedback form</a> and choose <strong>Astronomy Observation Planner macOS (Build 9)</strong> so the report is routed as Mac release feedback.</p>
         <p>This manual is intentionally separate from the iOS manual. iPhone and iPad users should use the <a href="../ios/user-manual.html">BigSky Planner iOS Manual</a>.</p>
       </section>
     </main>
