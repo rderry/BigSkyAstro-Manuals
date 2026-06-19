@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astronomy Observation Planner macOS Help</title>
+  <style>
+    :root{--bg:#07111f;--panel:rgba(247,250,255,.97);--ink:#111827;--muted:#536071;--line:rgba(122,144,176,.38);--blue:#295ea8;--gold:#f7c948}
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:linear-gradient(180deg,rgba(7,17,31,.86),rgba(36,64,104,.62) 34%,rgba(244,248,252,.96) 74%),url("../assets/veil-background-dark-20260605.png") center top/cover fixed,var(--bg);line-height:1.58}.wrap{max-width:1080px;margin:0 auto;padding:34px 20px 72px}header{color:white;padding:20px 0 32px}nav{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}nav a{color:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.26);border-radius:999px;padding:7px 12px;text-decoration:none;font-weight:800;background:rgba(255,255,255,.08)}.kicker{color:var(--gold);font-weight:900;text-transform:uppercase;margin:0 0 12px}h1{margin:0;font-size:clamp(2.25rem,5.8vw,4.6rem);line-height:1}.lede{max-width:840px;margin:18px 0 0;color:rgba(255,255,255,.86);font-size:1.08rem}main{display:grid;gap:18px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}section,.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:24px;box-shadow:0 18px 58px rgba(15,23,42,.14)}h2{margin:0 0 10px;color:var(--blue);font-size:1.45rem;line-height:1.2}h3{margin:18px 0 8px;color:#244a7f;font-size:1.06rem}p{margin:0 0 12px}ol,ul{margin:8px 0 0 1.25rem;padding:0}li{margin:7px 0}.callout{background:#fff8d8;border:1px solid rgba(247,201,72,.58);border-radius:8px;padding:14px 16px;font-weight:700}a{color:#0c4fa8;font-weight:800}.button{display:inline-block;margin-top:4px;color:#10131c!important;background:linear-gradient(135deg,#ffe778,#ffc22f 55%,#c98105);border-radius:8px;padding:9px 13px;text-decoration:none}.footer{margin-top:24px;color:rgba(255,255,255,.72);text-align:center}@media(max-width:760px){.grid{grid-template-columns:1fr}section,.card{padding:20px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <nav aria-label="macOS help navigation">
+        <a href="../index.html">Privacy</a>
+        <a href="../user-manual.html">User Manuals</a>
+        <a href="user-manual.html">macOS Manual</a>
+        <a href="../feedback.html">Feedback</a>
+      </nav>
+      <p class="kicker">macOS Help</p>
+      <h1>Astronomy Observation Planner</h1>
+      <p class="lede">Fast help for the Mac app: first setup, location and equipment selection, exact-match target images, target filtering, saving, exporting, and purchase prompts.</p>
+    </header>
+
+    <main>
+      <section id="quick-start">
+        <h2>Quick Start</h2>
+        <ol>
+          <li>Open Astronomy Observation Planner and complete the privacy, internet, location, and language first-start page.</li>
+          <li>Open Setup Locations, save the observing site, and mark the site as the default.</li>
+          <li>Open Telescope, select the smart telescope and matching accessories, then set that equipment as default.</li>
+          <li>Open Targets or Plan an Observation, set filters, add any blocked sky areas, and apply the filter.</li>
+          <li>Review the Current Plan, then save, print, export, or create an observing log.</li>
+        </ol>
+      </section>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Target Images</h2>
+          <p>Sample target lookup only shows an image when the source page or public-image metadata matches the searched target name or catalog identifier.</p>
+          <p>The app checks Wikimedia first and may use NASA's public image library when it can still confirm the exact object match.</p>
+        </div>
+        <div class="card">
+          <h2>Filtering</h2>
+          <p>Use target type, magnitude, altitude, azimuth, date, time, and clear-area controls to build a visible target list.</p>
+          <p>When more than one clear sky area is set, targets that fit either area remain visible so the user can see all reachable targets.</p>
+        </div>
+      </div>
+
+      <section id="workflow">
+        <h2>Workflow</h2>
+        <p>The Mac app follows the same planning standard as the iOS flow chart:</p>
+        <ul>
+          <li><strong>Home:</strong> review moon and session context.</li>
+          <li><strong>Setup Locations:</strong> choose site, coordinates, elevation, time zone, and sky quality details.</li>
+          <li><strong>Telescope:</strong> choose visible telescope and accessories.</li>
+          <li><strong>Targets:</strong> filter the planning catalog and inspect exact-match samples.</li>
+          <li><strong>Plan:</strong> assign observing order and times.</li>
+          <li><strong>Current Plan and Logs:</strong> save, export, print, and record session notes.</li>
+        </ul>
+      </section>
+
+      <section id="purchase">
+        <h2>Trial And Purchase Prompt</h2>
+        <p>Advanced features use a local 30-day trial. When the trial ends, the app explains what feature is locked and provides an Open App Store action.</p>
+        <div class="callout">Best user flow: keep the prompt inside the app at the moment the user tries an advanced feature, with a plain "Open App Store" button and a visible remaining-trial-days message before expiration.</div>
+      </section>
+
+      <section id="support">
+        <h2>Support</h2>
+        <p>For help, include macOS version, app version/build, selected location, selected telescope/accessories, filters used, and the page where the issue happened.</p>
+        <p><a class="button" href="../feedback.html">Send feedback</a></p>
+      </section>
+    </main>
+
+    <p class="footer">&copy; 2026 BigSkyAstro.</p>
+  </div>
+</body>
+</html>
