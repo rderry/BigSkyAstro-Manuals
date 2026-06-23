@@ -207,7 +207,10 @@
 </ul>
 <h2>Code Annotations</h2>
 <ul>
-<li><code>AstronomyObservationPlanningIOSApp</code> owns the top-level launch gate: it records the first launch date, allows a 30-day test window, presents the friendly App Store purchase prompt after expiration, and then routes active users to privacy/first-start or the main shell.</li>
+<li><code>AstronomyObservationPlanningIOSApp</code> owns the top-level launch gate: it checks Full Access entitlement, starts the 30-day free trial from the thank-you screen, presents the five-day reminder, and routes active trial or purchased users to privacy/first-start or the main shell.</li>
+<li><code>MobileAppAccess</code> owns local trial and purchase state, including the first launch date, trial start date, expiration calculation, and stored Full Access flag.</li>
+<li><code>MobileStorePurchaseService</code> owns StoreKit Full Access purchase and restore calls for product id <code>com.bigskyastro.bigskyplanner.fullaccess</code>.</li>
+<li><code>MobileTrialThankYouView</code> and <code>MobileTrialExpiredView</code> own the user-facing trial start, expired-trial purchase, restore, cancellation, and product-missing messaging.</li>
 <li><code>MobileShellView</code> owns the iOS tab shell, system light/dark adaptation, compact Home header, Home settings data card, first-start setup, persisted internet/privacy setup status, pinned first-start Finish and Setup Checklist cards, in-app help content, and page routing.</li>
 <li><code>FirstStartSetupView</code> owns dimmed completed setup actions, collapsible setup checklist details, primary location auto-scroll, telescope-card collapse after save, and plan-folder completion state.</li>
 <li><code>ObservationLocationEditorCard</code> owns location name, GPS, country-first address entry, optional address labels after GPS, elevation, save, Set Default, Delete Location, and default-location behavior.</li>
