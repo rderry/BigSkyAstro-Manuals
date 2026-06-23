@@ -205,29 +205,4 @@
 <li>Confirm the default plan folder setting if you expect exported plans to appear in Files.</li>
 <li>Try Share Plan if the device print sheet is not available.</li>
 </ul>
-<h2>Code Annotations</h2>
-<ul>
-<li><code>AstronomyObservationPlanningIOSApp</code> owns the top-level launch gate: it checks Full Access entitlement, starts the 30-day free trial from the thank-you screen, presents the five-day reminder, and routes active trial or purchased users to privacy/first-start or the main shell.</li>
-<li><code>MobileAppAccess</code> owns local trial and purchase state, including the first launch date, trial start date, expiration calculation, and stored Full Access flag.</li>
-<li><code>MobileStorePurchaseService</code> owns StoreKit Full Access purchase and restore calls for product id <code>com.bigskyastro.bigskyplanner.fullaccess</code>.</li>
-<li><code>MobileTrialThankYouView</code> and <code>MobileTrialExpiredView</code> own the user-facing trial start, expired-trial purchase, restore, cancellation, and product-missing messaging.</li>
-<li><code>MobileShellView</code> owns the iOS tab shell, system light/dark adaptation, compact Home header, Home settings data card, first-start setup, persisted internet/privacy setup status, pinned first-start Finish and Setup Checklist cards, in-app help content, and page routing.</li>
-<li><code>FirstStartSetupView</code> owns dimmed completed setup actions, collapsible setup checklist details, primary location auto-scroll, telescope-card collapse after save, and plan-folder completion state.</li>
-<li><code>ObservationLocationEditorCard</code> owns location name, GPS, country-first address entry, optional address labels after GPS, elevation, save, Set Default, Delete Location, and default-location behavior.</li>
-<li><code>TargetDatabaseScreen</code> owns the two-control Target Setup top row, catalog scope, My Telescope observing-window defaults, filters, advanced filters, obstruction filtering, optional duration-in-view display, target cards, and Add to Planner routing.</li>
-<li><code>TargetDatabaseHeaderView</code> owns the Catalog, Time, and Filter popup action cards, including per-popup Apply and Cancel behavior.</li>
-<li><code>TargetCaptureGuidance</code> owns the offline capture-duration guidance shown by the target-card Details panel, including Min, Opt, Best, with-filter, and without-filter text.</li>
-<li><code>ObservationPlannerScreen</code> owns loaded-plan prompts, highlighted loaded-plan status, spreadsheet-style PDF/print rows, Preview PDF, Save PDF, Print Plan, Delete Plan, Share Plan, sort, and plan load/save behavior.</li>
-<li><code>PlanSaveFolderPreferenceStorage</code> owns the default Files folder bookmark used when saving plan text files and PDFs, with share-sheet fallback when a folder is not available.</li>
-<li><code>WeatherAndSkyInfoScreen</code> owns the viewing-period, My Telescope fallback window, sun/moon, compact source/update header, hourly weather rows, pressure trend, elevation-adjusted pressure, unit preference, and location-dependent weather display.</li>
-<li><code>MobileHelpSheet</code> mirrors this manual at a shorter in-app level, includes appearance/text-scaling notes, and loads screenshots from <code>Sources/Core/Resources/HelpScreenshots</code>.</li>
-<li><code>MobileGlassTabBarBackground</code> and <code>MobileMenuBarStyle</code> own the adaptive bottom tab material, selected/unselected icon colors, and light/dark glass treatments.</li>
-<li><code>AppTextOverflowGuard</code> provides development-time text overflow checks for high-risk compact labels.</li>
-</ul>
-<h2>Logic Flow Export</h2>
-<p>The full multi-page logic flow is exported as:</p>
-<ul>
-<li><code>Documentation/iOS-Logic-Flow-Overview.html</code></li>
-<li><code>Documentation/iOS-Logic-Flow-Overview.pdf</code></li>
-</ul>
 </body></html>
