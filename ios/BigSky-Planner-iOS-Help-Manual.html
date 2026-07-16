@@ -1,28 +1,55 @@
-<!doctype html><html><head><meta charset="utf-8"><title>BigSky Planner iOS Help Manual</title><style>body{font-family:-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif;margin:48px;line-height:1.45;color:#172033}h1{font-size:30px;border-bottom:2px solid #d7deea;padding-bottom:12px}h2{font-size:22px;margin-top:30px;border-bottom:1px solid #e6ebf2;padding-bottom:6px}h3{font-size:17px;margin-top:20px}code{font-family:Menlo,monospace;background:#f3f5f8;padding:1px 4px;border-radius:4px}li{margin:5px 0}p{margin:9px 0}.shot{color:#5a6680;font-style:italic}@page{size:auto;margin:0.6in}</style></head><body>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BigSky Planner iOS User Manual</title>
+<style>
+:root { color-scheme: light dark; --bg: #f8fafc; --fg: #101923; --muted: #536171; --card: #ffffff; --accent: #006f9f; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0f141a; --fg: #f4f7fb; --muted: #b6c0cc; --card: #171f28; --accent: #58c7ff; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+main { max-width: 940px; margin: 0 auto; padding: 28px 18px 64px; }
+h1 { font-size: 2.05rem; line-height: 1.1; margin: 0 0 0.35rem; }
+h2 { font-size: 1.45rem; margin: 2.1rem 0 0.75rem; padding-top: 0.2rem; border-top: 1px solid rgba(130,145,165,.28); }
+h3 { font-size: 1.1rem; margin: 1.35rem 0 0.4rem; }
+p { margin: 0.65rem 0; }
+ul { padding-left: 1.25rem; margin: 0.55rem 0 1rem; }
+li { margin: 0.38rem 0; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: rgba(127,127,127,.15); border-radius: 5px; padding: 0.05rem 0.25rem; }
+img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit: contain; margin: 0.8rem auto 1.2rem; border-radius: 8px; box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+.meta { color: var(--muted); font-weight: 600; margin-bottom: 1.1rem; }
+.card { background: var(--card); border: 1px solid rgba(130,145,165,.24); border-radius: 10px; padding: 18px; }
+</style></head><body><main>
 <h1>BigSky Planner iOS User Manual</h1>
-<p>Release: 1.3.1 (16)</p>
-<p>Updated: 2026-06-17</p>
+<p class="meta">Release: 17 (build 3)</p>
+<p class="meta">Updated: 2026-07-16</p>
 <h2>Purpose</h2>
 <p>BigSky Planner for iPhone and iPad helps set up an observing location, choose telescope equipment and accessories, filter target catalogs, assign observation times, review weather and sky information, and export an observing plan.</p>
 <h2>First Start Setup</h2>
-<p class="shot">Screenshot: First start setup path (<code>Screenshots/UserGuide/Level1/00-first-start-setup.png</code>)</p>
+<img src="Screenshots/UserGuide/Level1/00-first-start-setup.png" alt="First start setup path">
 <ul>
 <li>On first launch, answer whether the app may use the internet for setup and user-started data updates.</li>
 <li>Open the Privacy Statement link before answering if you want to review how data is handled. The privacy review state is saved locally and shown again in Set Up.</li>
 <li>After Internet, Privacy, or Plan Save Folder are answered, their action controls dim so the completed setup items are clear. Use Clear and Start Over to reset first-start setup.</li>
-<li>The Finish card and Setup Checklist stay pinned at the top. Collapse Details hides the explanatory setup text while leaving the checklist tick marks visible.</li>
+<li>The Finish card and Setup Checklist stay pinned at the top. The Setup Checklist starts collapsed by default; expand it when you want the detailed checklist text.</li>
 <li>Choose a preferred language.</li>
 <li>Create a primary viewing location using GPS, address entry, or manual coordinates.</li>
 <li>Choose the primary telescope and any compatible accessories. After saving, the telescope card collapses to its summary and the setup flow moves to the plan folder step.</li>
 <li>Choose or create a plan save folder in Files. That folder becomes the default destination for saved plan files and PDFs when available.</li>
 <li>Finish setup when internet preference, privacy review, location, telescope, plan save folder setting, and language are set. You can finish later after answering the internet permission prompt.</li>
 </ul>
+<h2>Trial and Full Access</h2>
+<ul>
+<li>The free trial begins when Continue is tapped on the trial introduction and remains active for 20 days.</li>
+<li>After the trial expires, the app opens the Full Access page instead of the planner.</li>
+<li>Purchase Full Access uses Apple StoreKit and the App Store purchase sheet.</li>
+<li>If the purchase is cancelled, declined, pending, or cannot be verified, the app remains locked and returns to the Full Access page when reopened.</li>
+<li>Restore Purchase checks the current Apple Account for the verified non-consumable Full Access purchase.</li>
+<li>BigSkyAstro does not maintain a separate purchaser email or serial-number database. Apple manages purchase history and entitlement restoration.</li>
+</ul>
 <h2>Home</h2>
-<p class="shot">Screenshot: Home dashboard (<code>Screenshots/UserGuide/Level1/01-home-iphone.png</code>)</p>
+<img src="Screenshots/UserGuide/Level1/01-home-iphone.png" alt="Home dashboard">
 <ul>
 <li>Home is the main dashboard.</li>
 <li>Use the action buttons to open Locations, Telescope, Targets, Planner, Weather, Set Up, and Help.</li>
-<li>The top card accepts telescope initialize and stop tracking times. Time entry accepts HHMM, 12-hour text such as <code>8:30 PM</code>, and 24-hour text such as <code>2030</code>.</li>
+<li>The Most Likely Time card calculates the Vespera II initialize and stop-tracking window, calibrated against observed Vaonis guidance and labeled <code>± 1 minute</code>. Time entry accepts HHMM, 12-hour text such as <code>8:30 PM</code>, and 24-hour text such as <code>2030</code>.</li>
 <li>Applying the telescope time window saves the observing window used by weather and target planning, then sends you to set or confirm a location.</li>
 <li>The top Home banner is compact so the actions and bottom data card remain visible on iPhone.</li>
 <li>The interface follows the iPhone or iPad system appearance automatically; the app no longer forces a dark-only help or shell view.</li>
@@ -30,7 +57,7 @@
 <li>The taller bottom data card lists Location Name, Telescope With Accessories, Total Targets, and Chosen Hemisphere Targets in larger dark yellow text on the standard blue card background.</li>
 </ul>
 <h2>Locations</h2>
-<p class="shot">Screenshot: Observation locations (<code>Screenshots/UserGuide/Level1/02-locations-top-level.png</code>)</p>
+<img src="Screenshots/UserGuide/Level1/02-locations-top-level.png" alt="Observation locations">
 <ul>
 <li>Save at least one observing location before filtering targets or reading weather.</li>
 <li>Use GPS first when possible. After GPS fills the site, Address Info collapses automatically and can be expanded again.</li>
@@ -43,15 +70,18 @@
 <li>Use Delete Location on a saved location card when a site should no longer be available.</li>
 </ul>
 <h2>Telescope</h2>
-<p class="shot">Screenshot: Smart telescope setup (<code>Screenshots/UserGuide/Level1/03-telescope-top-level.png</code>)</p>
+<img src="Screenshots/UserGuide/Level1/03-telescope-top-level.png" alt="Smart telescope setup">
 <ul>
 <li>Select the telescope you plan to use.</li>
 <li>Select compatible accessories for that telescope before saving the setup.</li>
 <li>Saved telescope and accessory data are used in Planner reports.</li>
 <li>The first saved or selected telescope can become the default telescope used by Home and Planner.</li>
+<li>Continue to Targets appears after the telescope setup is saved or restored, so the location-to-telescope-to-target flow can proceed without returning Home.</li>
+<li>When moving from Telescope to Targets, the app can restore the last saved plan or start a clean plan. Clean keeps the active location, telescope, catalog, date, and time window while clearing filters and selected targets.</li>
+<li>Restored plans are retimed against the current observing date and time window so old target selections can be checked against tonight&#x27;s sky.</li>
 </ul>
 <h2>Targets</h2>
-<p class="shot">Screenshot: Target database filters (<code>Screenshots/UserGuide/Level1/04-targets-top-level.png</code>)</p>
+<img src="Screenshots/UserGuide/Level1/04-targets-top-level.png" alt="Target database filters">
 <ul>
 <li>Use Update Data when target sources need refreshing.</li>
 <li>Use the Current Setup card to expand or collapse the active target settings summary.</li>
@@ -59,61 +89,74 @@
 <li>Action cards use glass status colors: green when a required setup block is valid, red until required user data is entered or the user has opened a filter without setting it.</li>
 <li>The top Apply action has been removed so Catalog and Current Setup have more room.</li>
 <li>Current target setup is held temporarily, so returning to Target Setup restores the active catalog, time, and filter choices.</li>
+<li>The catalog card shows the active magnitude limit so the default target depth is visible before opening filters.</li>
 <li>If transient target data is stale, target cards show Update Data and remain disabled until refreshed.</li>
-<li>Numeric altitude and azimuth entry supports the iOS numeric keypad. Dismiss the keypad before moving farther down the card.</li>
+<li>Numeric altitude, azimuth, time, and date entry supports the iOS keypad. A Done control is added above the keyboard so the page can be dismissed cleanly without covering cards.</li>
 </ul>
 <h2>Advanced Target Filters</h2>
-<p class="shot">Screenshot: Advanced target filters (<code>Screenshots/UserGuide/Level2/01-targets-advanced-filters.png</code>)</p>
+<img src="Screenshots/UserGuide/Level2/01-targets-advanced-filters.png" alt="Advanced target filters">
 <ul>
-<li>Open Advanced Filters for magnitude, altitude, magnetic azimuth, object type, and observing-window limits.</li>
+<li>Open Advanced Filters for magnitude, altitude, azimuth, object type, and observing-window limits.</li>
+<li>Use Common Databases to select curated object groups such as galaxies, nebulae, clusters, stars, multiple stars, solar system targets, and transients before applying the detailed type filters.</li>
 <li>Altitude limits accept 0 through 99 degrees. Azimuth limits accept 000 through 360 degrees.</li>
 <li>Obstructions remove targets that fall inside blocked azimuth or altitude ranges.</li>
 <li>Clear Sky filter ranges can be added one after another without closing the card, and a new range can be canceled before saving.</li>
+<li>Clear Sky ranges are treated as an accepted union. For example, 190-220 degrees with 40-70 degrees altitude and 220-360 degrees with 25-75 degrees altitude will both be considered during target selection.</li>
+<li>When two Clear Sky ranges touch or overlap at the same bearing, the less restrictive lower altitude is used for that bearing.</li>
+<li>Magnitude, target type, observation date and time, azimuth limits, altitude limits, obstruction limits, and Clear Sky ranges are all applied before the target list is built.</li>
 <li>Returning to Advanced Filters activates Apply Filter even if values did not change, so you can rerun the current filter set.</li>
 <li>After applying filters, advanced options collapse and the target data is presented.</li>
 <li>The Display section includes Duration in View. Turn it on, apply filters, and target cards show <code>Dur: HH:MM</code> for the time each target remains visible inside the applied observing window.</li>
+<li>First View sorting places the earliest available target first. Magnitude sorting places the brightest target first.</li>
 </ul>
-<p class="shot">Screenshot: Duration in View filter (<code>Screenshots/UserGuide/Level2/04-target-duration-filter.png</code>)</p>
+<img src="Screenshots/UserGuide/Level2/04-target-duration-filter.png" alt="Duration in View filter">
 <h2>Target Results</h2>
-<p class="shot">Screenshot: Filtered target results (<code>Screenshots/UserGuide/Level2/02-targets-filter-results.png</code>)</p>
+<img src="Screenshots/UserGuide/Level2/02-targets-filter-results.png" alt="Filtered target results">
 <ul>
 <li>Target cards show object type, magnitude, first usable time, altitude, and azimuth.</li>
+<li>Star targets are included in the bundled local catalog, including bright stars and binary or multiple-star matches when available.</li>
 <li>When Duration in View is enabled, cards also show <code>Dur: HH:MM</code> beside the first usable window.</li>
 <li>Use Details to expand a target card. The expanded card stays usable for Check, Sample, and Add Plan while adding telescope-specific capture guidance.</li>
 <li>The Details panel shows Min, Opt, and Best integration times for the saved default telescope and notes whether an unfiltered or filtered capture makes sense for the target type.</li>
 <li>Use Add to Planner for a target that is not yet scheduled.</li>
 <li>Use Go to Planner for a target already added to the plan.</li>
+<li>Checked targets remain visible when switching object types, such as from Nebulae to Clusters, so mixed target plans can be built without losing earlier selections.</li>
+<li>Catalog aliases are merged into one target when Messier, NGC, IC, Caldwell, or common-name entries refer to the same object. Saved plans that used an older alias are resolved to the merged target when reopened.</li>
 <li>Targets that fail obstruction, altitude, azimuth, magnitude, location, or time-window checks are removed from the candidate list.</li>
 </ul>
-<p class="shot">Screenshot: Expanded target details (<code>Screenshots/UserGuide/Level2/05-target-details-duration.png</code>)</p>
+<img src="Screenshots/UserGuide/Level2/05-target-details-duration.png" alt="Expanded target details">
 <h2>Observation Time Sheet</h2>
-<p class="shot">Screenshot: Target observation time sheet (<code>Screenshots/UserGuide/Level3/01-target-observation-time-sheet.png</code>)</p>
+<img src="Screenshots/UserGuide/Level3/01-target-observation-time-sheet.png" alt="Target observation time sheet">
 <ul>
 <li>Set the target start and stop time from the observation-time sheet.</li>
 <li>Start and stop values can be entered in 12-hour or 24-hour form.</li>
+<li>When you set a target's end time, that end time becomes the next target's start time in the current planner order.</li>
 <li>Times after midnight are normalized to the next calendar day of the same observing night.</li>
 <li>The app checks planned target windows and blocks true overlaps.</li>
 <li>If a time conflict is found, cancel or resolve the conflicting target before the new target is committed.</li>
 </ul>
 <h2>Planner</h2>
-<p class="shot">Screenshot: Planner (<code>Screenshots/UserGuide/Level1/05-planner-top-level.png</code>)</p>
+<img src="Screenshots/UserGuide/Level1/05-planner-top-level.png" alt="Planner">
 <ul>
 <li>The Planner page collects targets and observation windows into a plan.</li>
-<li>Sort the plan by Start Time, Zenith, or Magnitude as needed.</li>
+<li>The plan is shown in start-time order.</li>
 <li>Target cards scroll under the save and print options so the controls remain reachable.</li>
 <li>If no plan exists, the planner says no plan is currently built and links back to Plan an Observation.</li>
 </ul>
 <h2>Planner Actions</h2>
-<p class="shot">Screenshot: Planner actions (<code>Screenshots/UserGuide/Level2/03-planner-actions.png</code>)</p>
+<img src="Screenshots/UserGuide/Level2/03-planner-actions.png" alt="Planner actions">
 <ul>
-<li>When a plan is present, Save PDF, Preview, Print Plan, Delete Plan, Load Plan, and Share Plan are available.</li>
+<li>When a plan is present, Save PDF, Preview, Print Plan, Delete Plan, Fill Gaps, Load Plan, Share Plan, and Quick Ref are available.</li>
 <li>Load Plan opens saved plans. After loading, the app shows <code>Plan Loaded</code> and asks whether to add more targets.</li>
 <li>Choose Yes to go to Targets. Choose No to stay on Planner.</li>
 <li>The loaded plan name and loaded-plan status text turn yellow so it is clear a saved plan is active.</li>
 <li>Printing uses a spreadsheet-style layout with Start, End, Alt, Az, and Mag.</li>
+<li>Fill Gaps suggests matching targets for open windows between scheduled planner targets, using the active filters and saved observing location.</li>
+<li>Fill Gaps includes Sample so you can preview a suggested target before adding it.</li>
+<li>Quick Ref opens a preview of the short field report with only target name, first view time, azimuth, and altitude, then exports either PDF or text.</li>
 </ul>
 <h2>Weather and Sky Info</h2>
-<p class="shot">Screenshot: Weather and sky info (<code>Screenshots/UserGuide/Level1/07-weather-sky-info.png</code>)</p>
+<img src="Screenshots/UserGuide/Level1/07-weather-sky-info.png" alt="Weather and sky info">
 <ul>
 <li>Weather uses the default viewing location and telescope observing window when available.</li>
 <li>If My Telescope times are set, the viewing period follows that saved initialize/stop window until a saved plan takes over.</li>
@@ -127,7 +170,7 @@
 <li>If no valid location is saved, weather cannot calculate local conditions. Return to Locations and save a valid site.</li>
 </ul>
 <h2>Set Up</h2>
-<p class="shot">Screenshot: Set Up (<code>Screenshots/UserGuide/Level1/08-set-up-top-level.png</code>)</p>
+<img src="Screenshots/UserGuide/Level1/08-set-up-top-level.png" alt="Set Up">
 <ul>
 <li>Set Up contains language, unit preference, internet permission, data update actions, and About This App.</li>
 <li>Internet-required actions are labeled.</li>
@@ -137,13 +180,13 @@
 <li>About This App opens controlled in-app web windows for off-site privacy, support, and reference pages.</li>
 </ul>
 <h2>Help and Clock Support</h2>
-<p class="shot">Screenshot: Help (<code>Screenshots/UserGuide/Level1/06-help-top-level.png</code>)</p>
+<img src="Screenshots/UserGuide/Level1/06-help-top-level.png" alt="Help">
 <ul>
 <li>Open Help from the question mark icon in the bottom menu bar.</li>
 <li>Help mirrors the major manual sections with embedded screenshots.</li>
 <li>The help content includes first-, second-, and third-level flows.</li>
 </ul>
-<p class="shot">Screenshot: Clock support detail (<code>Screenshots/UserGuide/Level3/02-help-clock-support.png</code>)</p>
+<img src="Screenshots/UserGuide/Level3/02-help-clock-support.png" alt="Clock support detail">
 <ul>
 <li>Displayed times follow the iPhone or iPad clock preference.</li>
 <li>Time entry accepts common 12-hour and 24-hour formats.</li>
@@ -187,7 +230,7 @@
 </ul>
 <h3>Numeric Keypad Covers The Target Card</h3>
 <ul>
-<li>Dismiss the keypad after entering the value.</li>
+<li>Tap Done above the keypad after entering the value.</li>
 <li>Scroll the target page so cards pass under the filter panel.</li>
 <li>Reopen Advanced Filters only when more values must be changed.</li>
 </ul>
@@ -205,4 +248,10 @@
 <li>Confirm the default plan folder setting if you expect exported plans to appear in Files.</li>
 <li>Try Share Plan if the device print sheet is not available.</li>
 </ul>
-</body></html>
+<h2>Logic Flow Export</h2>
+<p>The full multi-page logic flow is exported as:</p>
+<ul>
+<li><code>Documentation/iOS-Logic-Flow-Overview.html</code></li>
+<li><code>Documentation/iOS-Logic-Flow-Overview.pdf</code></li>
+</ul>
+</main></body></html>
