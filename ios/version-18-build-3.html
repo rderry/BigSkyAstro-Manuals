@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BigSky Planner Version 18 Build 3</title>
+  <style>
+    :root {
+      --bg: #061029;
+      --panel: rgba(255, 255, 255, .95);
+      --ink: #10213a;
+      --muted: #54657a;
+      --gold: #f5c84b;
+      --blue: #1759b8;
+      --line: rgba(16, 33, 58, .16);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Aptos", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(6,16,41,.92), rgba(6,16,41,.80) 35%, rgba(246,248,252,.96) 72%),
+        url("../assets/veil-background-dark-20260605.png") center top / cover fixed,
+        var(--bg);
+      line-height: 1.62;
+    }
+
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 112px 20px 72px; }
+    .topline {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      padding: 12px max(20px, calc((100vw - 1120px) / 2 + 20px));
+      background: rgba(5, 8, 18, .86);
+      border-bottom: 1px solid rgba(255, 218, 95, .22);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand { color: var(--gold); font-weight: 900; letter-spacing: .04em; margin: 0; }
+    .nav { display: flex; gap: 14px; flex-wrap: wrap; }
+    .nav a { color: rgba(255,255,255,.78); text-decoration: none; font-weight: 800; font-size: .94rem; }
+    .nav a[aria-current=page] { color: var(--gold); }
+    .button { color: #10131c !important; background: linear-gradient(135deg,#ffe778,#ffc22f 55%,#c98105); border-radius: 8px; padding: 8px 12px; }
+
+    header { color: white; padding: 24px 0 34px; }
+    h1 { margin: 0; max-width: 860px; font-size: clamp(2.4rem, 6vw, 4.7rem); line-height: 1; }
+    .lede { max-width: 830px; margin: 18px 0 0; color: rgba(255,255,255,.86); font-size: 1.08rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .meta span { border: 1px solid rgba(245,200,75,.36); background: rgba(255,255,255,.08); border-radius: 999px; padding: 7px 12px; color: rgba(255,255,255,.88); }
+
+    main { display: grid; gap: 16px; }
+    section, .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 18px 54px rgba(6,16,41,.14);
+    }
+    section { padding: 26px; }
+    h2 { margin: 0 0 10px; color: var(--blue); font-size: 1.35rem; line-height: 1.2; }
+    h3 { margin: 18px 0 8px; color: #0d356f; }
+    p { margin: 0 0 12px; }
+    ul { margin: 10px 0 0 1.2rem; padding: 0; }
+    li + li { margin-top: 7px; }
+    a { color: #0c4fa8; font-weight: 800; }
+
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .highlight { background: rgba(232,240,255,.92); }
+    .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .shot { background: white; border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+    .shot img { width: 100%; display: block; border-radius: 8px; }
+    .shot p { margin: 8px 0 0; font-size: .92rem; color: var(--muted); }
+    .footer { margin-top: 28px; color: rgba(255,255,255,.72); font-size: .92rem; text-align: center; }
+
+    @media (max-width: 800px) {
+      .topline { align-items: flex-start; flex-direction: column; gap: 8px; padding: 10px 16px; }
+      .nav { overflow-x: auto; flex-wrap: nowrap; width: 100%; padding-bottom: 2px; }
+      .nav a { white-space: nowrap; }
+      .wrap { padding-top: 152px; }
+      .grid, .gallery { grid-template-columns: 1fr; }
+      section { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline">
+    <p class="brand">BigSkyAstro</p>
+    <nav class="nav" aria-label="BigSkyAstro pages">
+      <a href="../index.html">Privacy</a>
+      <a href="../changes.html">Changes</a>
+      <a href="user-manual.html">iOS Manual</a>
+      <a href="version-18-build-3.html" aria-current="page">Version 18 Build 3</a>
+      <a href="test-checklist.html">iOS Checklist</a>
+      <a class="button" href="../feedback.html">Send Feedback</a>
+    </nav>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <h1>Version 18 Build 3</h1>
+      <p class="lede">A focused App Store update for existing users: clean target startup, corrected planner insertion resequencing, telescope-specific Home timing, shared Vaonis smart telescope timing, weather source options, Hestia removal, refreshed Help, and updated release documentation.</p>
+      <div class="meta">
+        <span>Version 18</span>
+        <span>Build 3</span>
+        <span>Updated July 18, 2026</span>
+        <span>Release candidate</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="highlight">
+        <h2>What's New</h2>
+        <p>BigSky Planner Version 18 build 3 supersedes the earlier Version 18 build 1 package. It keeps the Version 18 planning workflow and adds clean target startup plus corrected planner insertion resequencing: the app opens with no selected targets unless the user reloads a saved plan, and a newly checked target is inserted into the existing planner chain by first-visible order. Planner rows still auto-populate as a visibility-based target chain: each target ends when the next starts, and the final target ends at the earlier of its visible card end or the capture-window end.</p>
+      </section>
+
+      <div class="grid">
+        <section>
+          <h2>Updates:</h2>
+          <ul>
+            <li>Home timing now receives the saved default telescope name and timing policy.</li>
+            <li>App start clears selected targets and planner rows unless the user explicitly reloads a saved plan from Planner.</li>
+            <li>Adding another checked target after returning from Planner resequences the current chain into first-visible order.</li>
+            <li>Current iPhone location is used first for telescope initialization and stop-tracking calculations.</li>
+            <li>All Vaonis smart telescopes use the calibrated Vespera II Singularity field window.</li>
+            <li>Default telescope save prompts can return directly to Home Initialization Time.</li>
+            <li>Planner target chains auto-populate from the ordered target list, with target end times becoming the next target start.</li>
+            <li>Weather Setup can optionally use a Weather Underground PWS station ID for current observations while Open-Meteo fills unsupported forecast data.</li>
+            <li>GPS-captured locations can resolve the coordinate back into address fields when iOS supplies a placemark.</li>
+            <li>In-app Help, online manuals, PDF manuals, QA checklist, release notes, and the iOS wire diagram were refreshed.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Fixes:</h2>
+          <ul>
+            <li>Hestia is removed from smart telescope setup because it is a phone accessory, not a true smart telescope.</li>
+            <li>Older saved Hestia records are cleaned from local telescope storage.</li>
+            <li>Telescope page observation-location card now lists only the location name.</li>
+            <li>Home timing no longer briefly fills from the saved location while waiting for iPhone GPS timing.</li>
+            <li>Target database updates now show the large-dataset warning before the download starts.</li>
+            <li>Checked and planned targets stay available when returning to Targets, changing filters, or switching database/type choices during the active planning session.</li>
+            <li>Stale selected targets from a previous launch no longer seed a new plan before the user loads one.</li>
+            <li>Planner reports pad ALT values to two digits for cleaner preview, share, PDF, print, and Quick Ref output.</li>
+            <li>Vaonis timing documentation no longer describes the calibration as Vespera-II-only behavior.</li>
+          </ul>
+        </section>
+      </div>
+
+      <section>
+        <h2>Revision Details</h2>
+        <h3>Telescope Timing</h3>
+        <ul>
+          <li>Vaonis: shared calibrated Vespera II Singularity window, including the practical display offsets tested against observed Vaonis behavior.</li>
+          <li>Unistellar: visible-star orientation estimate.</li>
+          <li>ZWO Seestar: GoTo readiness estimate.</li>
+          <li>Celestron: conservative plate-solving readiness estimate.</li>
+          <li>DWARFLAB and unconfirmed models: visible-star readiness estimate.</li>
+        </ul>
+
+        <h3>Planning And Field Workflow Carried Forward From Version 18</h3>
+        <ul>
+          <li>Future-night planning from setup and Home.</li>
+          <li>Common Databases filters for curated object families.</li>
+          <li>Star and multiple-star target support in the bundled local catalog.</li>
+          <li>Multiple Clear Sky azimuth/altitude openings.</li>
+          <li>Mixed object-type plans without losing checked targets.</li>
+          <li>Target end-time propagation into the next target start time.</li>
+          <li>Planner Fill Gaps suggestions with Sample preview.</li>
+          <li>Quick Ref preview/export for short field use.</li>
+          <li>Updated in-app Help and manual screenshots.</li>
+        </ul>
+
+        <h3>Planner Chain Logic</h3>
+        <ul>
+          <li>The first target uses its selected or first usable start time.</li>
+          <li>Each non-final target end time is the next target start time.</li>
+          <li>When the user edits a target end time, that end becomes the next visible target start and the remaining chain ripples forward.</li>
+          <li>The final target ends at its visible card end or the capture-window end, whichever comes first.</li>
+          <li>First-available target times still help sort candidates, but they no longer overwrite an already built user chain.</li>
+        </ul>
+
+        <h3>Weather, Location, And Database Updates</h3>
+        <ul>
+          <li>Weather Underground PWS can be selected as an optional current-observation source by station ID.</li>
+          <li>Open-Meteo remains the fallback source for unsupported cloud and forecast rows.</li>
+          <li>GPS location capture can fill address fields from iOS reverse geocoding.</li>
+          <li>Target database updates warn before starting because the dataset may be large.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Build 3 Images</h2>
+        <div class="gallery">
+          <div class="shot"><img src="version-18-build-3/01-vaonis-timing-update.png" alt="Vaonis timing update"><p>Vaonis timing update.</p></div>
+          <div class="shot"><img src="version-18-build-3/02-default-telescope-home.png" alt="Default telescope on Home"><p>Default telescope timing on Home.</p></div>
+          <div class="shot"><img src="version-18-build-3/03-hestia-removed.png" alt="Hestia removed"><p>Hestia removed from smart telescope setup.</p></div>
+          <div class="shot"><img src="version-18-build-3/04-help-and-docs.png" alt="Help and docs refreshed"><p>Help and docs refreshed.</p></div>
+          <div class="shot"><img src="version-18-build-3/05-quick-ref-report.png" alt="Quick Ref report"><p>Quick Ref release image.</p></div>
+          <div class="shot"><img src="version-18-build-3/06-quick-ref-highlight.png" alt="Quick Ref highlight"><p>Quick Ref remains available for field use.</p></div>
+          <div class="shot"><img src="version-18-build-3/07-planner-chain.png" alt="Planner chain logic"><p>Planner chain: target end becomes next start.</p></div>
+          <div class="shot"><img src="version-18-build-3/08-weather-pws-option.png" alt="Weather PWS option"><p>Optional PWS weather source with Open-Meteo fallback.</p></div>
+          <div class="shot"><img src="version-18-build-3/09-two-digit-alt.png" alt="Two digit ALT report"><p>Two-digit ALT formatting for field reports.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Release Files</h2>
+        <ul>
+          <li><a href="user-manual.html">Updated iOS User Manual</a></li>
+          <li><a href="BigSky-Planner-iOS-Help-Manual.html">Updated Help Manual</a></li>
+          <li><a href="BigSky-Planner-iOS-Help-Manual.pdf">Help Manual PDF</a></li>
+          <li><a href="test-checklist.html">Build 3 QA Checklist</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <p class="footer">&copy; 2026 BigSkyAstro.</p>
+  </div>
+</body>
+</html>
