@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BigSkyAstro App Changes</title>
+  <style>
+    :root{--bg:#061029;--panel:rgba(255,255,255,.95);--ink:#10213a;--muted:#54657a;--gold:#f5c84b;--blue:#1759b8;--line:rgba(16,33,58,.16)}
+    *{box-sizing:border-box}body{margin:0;font-family:"Aptos","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,rgba(6,16,41,.92),rgba(6,16,41,.80) 35%,rgba(246,248,252,.96) 72%),url("assets/veil-background-dark-20260605.png") center top/cover fixed,var(--bg);line-height:1.62}.wrap{max-width:1120px;margin:0 auto;padding:112px 20px 72px}.topline{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:12px max(20px,calc((100vw - 1120px)/2 + 20px));background:rgba(5,8,18,.86);border-bottom:1px solid rgba(255,218,95,.22);backdrop-filter:blur(18px)}.brand{color:var(--gold);font-weight:900;letter-spacing:.04em;margin:0}.nav{display:flex;gap:14px;flex-wrap:wrap}.nav a{color:rgba(255,255,255,.78);text-decoration:none;font-weight:800;font-size:.94rem}.nav a[aria-current=page]{color:var(--gold)}.button{color:#10131c!important;background:linear-gradient(135deg,#ffe778,#ffc22f 55%,#c98105);border-radius:8px;padding:8px 12px}header{color:white;padding:24px 0 34px}h1{margin:0;max-width:900px;font-size:clamp(2.4rem,6vw,4.7rem);line-height:1}.lede{max-width:850px;margin:18px 0 0;color:rgba(255,255,255,.86);font-size:1.08rem}main{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px;box-shadow:0 18px 54px rgba(6,16,41,.14)}h2{margin:0 0 10px;color:var(--blue);font-size:1.35rem;line-height:1.2}p{margin:0 0 12px}ul{margin:10px 0 0 1.2rem;padding:0}li+li{margin-top:7px}a{color:#0c4fa8;font-weight:800}.footer{margin-top:28px;color:rgba(255,255,255,.72);font-size:.92rem;text-align:center}@media(max-width:800px){.topline{align-items:flex-start;flex-direction:column;gap:8px;padding:10px 16px}.nav{overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:2px}.nav a{white-space:nowrap}.wrap{padding-top:152px}main{grid-template-columns:1fr}.card{padding:20px}}
+  </style>
+</head>
+<body>
+  <div class="topline">
+    <p class="brand">BigSkyAstro</p>
+    <nav class="nav" aria-label="BigSkyAstro pages">
+      <a href="index.html">Privacy</a>
+      <a href="changes.html" aria-current="page">Changes</a>
+      <a href="ios/user-manual.html">iOS Manual</a>
+      <a href="macos/user-manual.html">macOS Manual</a>
+      <a class="button" href="feedback.html">Send Feedback</a>
+    </nav>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <h1>BigSkyAstro Changes</h1>
+      <p class="lede">Release notes and visual updates for BigSky Planner on iPhone/iPad and Astronomy Observation Planner on Mac.</p>
+    </header>
+
+    <main>
+      <article class="card">
+        <h2>iOS Version 18 Build 1</h2>
+        <p>Mobile update for smart telescope timing, planner auto-population, Weather Underground PWS support, Quick Ref output, and refreshed help.</p>
+        <ul>
+          <li>Vaonis timing and saved default telescope handling.</li>
+          <li>Checked-target chain from initialization through next target boundaries.</li>
+          <li>Weather source choice with Open-Meteo fallback.</li>
+        </ul>
+        <p><a href="ios/version-18-build-1.html">Open iOS changes</a></p>
+      </article>
+
+      <article class="card">
+        <h2>macOS Version 17 Build 4</h2>
+        <p>Desktop update for corrected target-chain timing, midnight normalization, card-end caps, release docs, diagrams, and refreshed screenshots.</p>
+        <ul>
+          <li>M3 starts at initialization and ends at M11.</li>
+          <li>M11, NGC 6823, and NGC 6992 cascade by first visible start.</li>
+          <li>The final target uses remaining time only while visible.</li>
+        </ul>
+        <p><a href="macos/version-17-build-4.html">Open macOS changes</a></p>
+      </article>
+    </main>
+
+    <p class="footer">&copy; 2026 BigSkyAstro.</p>
+  </div>
+</body>
+</html>
