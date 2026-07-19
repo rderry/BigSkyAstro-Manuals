@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astronomy Observation Planner macOS Version 17 Build 5</title>
+  <style>
+    :root{--bg:#061029;--panel:rgba(255,255,255,.95);--ink:#10213a;--muted:#54657a;--gold:#f5c84b;--blue:#1759b8;--line:rgba(16,33,58,.16)}
+    *{box-sizing:border-box}body{margin:0;font-family:"Aptos","Helvetica Neue",Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,rgba(6,16,41,.92),rgba(6,16,41,.80) 35%,rgba(246,248,252,.96) 72%),url("../assets/veil-background-dark-20260605.png") center top/cover fixed,var(--bg);line-height:1.62}.wrap{max-width:1120px;margin:0 auto;padding:112px 20px 72px}.topline{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:12px max(20px,calc((100vw - 1120px)/2 + 20px));background:rgba(5,8,18,.86);border-bottom:1px solid rgba(255,218,95,.22);backdrop-filter:blur(18px)}.brand{color:var(--gold);font-weight:900;letter-spacing:.04em;margin:0}.nav{display:flex;gap:14px;flex-wrap:wrap}.nav a{color:rgba(255,255,255,.78);text-decoration:none;font-weight:800;font-size:.94rem}.nav a[aria-current=page]{color:var(--gold)}.button{color:#10131c!important;background:linear-gradient(135deg,#ffe778,#ffc22f 55%,#c98105);border-radius:8px;padding:8px 12px}header{color:white;padding:24px 0 34px}h1{margin:0;max-width:900px;font-size:clamp(2.4rem,6vw,4.7rem);line-height:1}.lede{max-width:850px;margin:18px 0 0;color:rgba(255,255,255,.86);font-size:1.08rem}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.meta span{border:1px solid rgba(245,200,75,.36);background:rgba(255,255,255,.08);border-radius:999px;padding:7px 12px;color:rgba(255,255,255,.88)}main{display:grid;gap:16px}section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px;box-shadow:0 18px 54px rgba(6,16,41,.14)}h2{margin:0 0 10px;color:var(--blue);font-size:1.35rem;line-height:1.2}h3{margin:18px 0 8px;color:#0d356f}p{margin:0 0 12px}ul{margin:10px 0 0 1.2rem;padding:0}li+li{margin-top:7px}a{color:#0c4fa8;font-weight:800}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.highlight{background:rgba(232,240,255,.92)}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.shot{background:white;border:1px solid var(--line);border-radius:10px;padding:10px}.shot img{width:100%;display:block;border-radius:8px}.shot p{margin:8px 0 0;font-size:.92rem;color:var(--muted)}.footer{margin-top:28px;color:rgba(255,255,255,.72);font-size:.92rem;text-align:center}@media(max-width:800px){.topline{align-items:flex-start;flex-direction:column;gap:8px;padding:10px 16px}.nav{overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:2px}.nav a{white-space:nowrap}.wrap{padding-top:152px}.grid,.gallery{grid-template-columns:1fr}section{padding:20px}}
+  </style>
+</head>
+<body>
+  <div class="topline">
+    <p class="brand">BigSkyAstro</p>
+    <nav class="nav" aria-label="BigSkyAstro pages">
+      <a href="../index.html">Privacy</a>
+      <a href="../changes.html">Changes</a>
+      <a href="user-manual.html">macOS Manual</a>
+      <a href="version-17-build-5.html" aria-current="page">macOS 17 Build 5</a>
+      <a href="../ios/version-18-build-4.html">iOS 18 Build 4</a>
+      <a class="button" href="../feedback.html">Send Feedback</a>
+    </nav>
+  </div>
+
+  <div class="wrap">
+    <header>
+      <h1>macOS Version 17 Build 5</h1>
+      <p class="lede">A major planner-timing update for Astronomy Observation Planner on Mac. Version 17 Build 5 aligns the macOS target chain with the corrected iOS behavior, adds clean-start and date-change protection, and refreshes release documents, logic diagrams, and website screenshots.</p>
+      <div class="meta">
+        <span>Version 17</span>
+        <span>Build 5</span>
+        <span>Updated July 19, 2026</span>
+        <span>macOS</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="highlight">
+        <h2>Timing Correction</h2>
+        <p>The planner now treats the selected observation window as a night chain. The first selected target starts at initialization. Each next target starts at its first visible/card start and closes the previous target. The final target uses the remaining observing window only while it remains visible; if its card end arrives first, the rest of the window remains unused until another target is added.</p>
+      </section>
+
+      <div class="grid">
+        <section>
+          <h2>Base Test Chain</h2>
+          <ul>
+            <li>M3: 22:34 to 23:49</li>
+            <li>M11: 23:49 to 01:04</li>
+            <li>NGC 6823: 01:04 to 02:34</li>
+            <li>NGC 6992: 02:34 to 04:47, unless its visible card end is earlier</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What Changed</h2>
+          <ul>
+            <li>macOS planner service now starts the first target at initialization.</li>
+            <li>Next-start boundaries are normalized across midnight.</li>
+            <li>Inserted targets slip into the correct first-visible position and recascade the plan.</li>
+            <li>Date changes show one save/clear/cancel gate before clearing an active plan.</li>
+            <li>The Current List starts clean unless a saved plan is opened.</li>
+            <li>Recommended/card end times cap target windows.</li>
+            <li>Planner tests now cover the iOS comparison targets and three mixed insertion sets.</li>
+            <li>Release docs and logic-flow diagrams describe Version 17 Build 5.</li>
+          </ul>
+        </section>
+      </div>
+
+      <section>
+        <h2>Updated Screens</h2>
+        <div class="gallery">
+          <div class="shot"><img src="version-17-build-5/01-macos-first-start.png" alt="macOS first start screen"><p>First-start privacy and connectivity choices.</p></div>
+          <div class="shot"><img src="version-17-build-5/02-macos-home-planning.png" alt="macOS home planning screen"><p>Home planning workspace.</p></div>
+          <div class="shot"><img src="version-17-build-5/03-macos-locations.png" alt="macOS locations screen"><p>Observing site setup.</p></div>
+          <div class="shot"><img src="version-17-build-5/04-macos-equipment.png" alt="macOS equipment screen"><p>Telescope and accessory setup.</p></div>
+          <div class="shot"><img src="version-17-build-5/05-macos-target-database.png" alt="macOS target database screen"><p>Target database controls.</p></div>
+          <div class="shot"><img src="version-17-build-5/06-macos-target-filters.png" alt="macOS target filter screen"><p>Visibility filters and blocked sky areas.</p></div>
+          <div class="shot"><img src="version-17-build-5/07-macos-plan-observation.png" alt="macOS plan observation screen"><p>Corrected M3, M11, NGC 6823, NGC 6992 chain.</p></div>
+          <div class="shot"><img src="version-17-build-5/08-macos-review-export-logs.png" alt="macOS review export screen"><p>Version 17 Build 5 observation-window review.</p></div>
+          <div class="shot"><img src="version-17-build-5/09-macos-help.png" alt="macOS help screen"><p>Built-in Help workspace.</p></div>
+          <div class="shot"><img src="version-17-build-5/10-macos-trial-purchase.png" alt="macOS trial purchase screen"><p>Advanced Features trial and purchase flow.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Release Files</h2>
+        <ul>
+          <li><a href="user-manual.html">macOS User Manual</a></li>
+          <li><a href="help.html">macOS Help</a></li>
+          <li><a href="../changes.html">All BigSkyAstro changes</a></li>
+          <li><a href="https://apps.apple.com/us/app/smart-telescope-planner/id6768153445">iOS App Store companion: Smart Telescope Planner</a></li>
+          <li><a href="../ios/version-18-build-4.html">iOS Version 18 Build 4 changes</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <p class="footer">&copy; 2026 BigSkyAstro.</p>
+  </div>
+</body>
+</html>
