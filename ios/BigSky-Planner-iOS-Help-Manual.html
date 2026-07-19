@@ -18,8 +18,8 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 .card { background: var(--card); border: 1px solid rgba(130,145,165,.24); border-radius: 10px; padding: 18px; }
 </style></head><body><main>
 <h1>BigSky Planner iOS User Manual</h1>
-<p class="meta">Release: 17 (build 3)</p>
-<p class="meta">Updated: 2026-07-16</p>
+<p class="meta">Release: 17 (build 1)</p>
+<p class="meta">Updated: 2026-07-18</p>
 <h2>Purpose</h2>
 <p>BigSky Planner for iPhone and iPad helps set up an observing location, choose telescope equipment and accessories, filter target catalogs, assign observation times, review weather and sky information, and export an observing plan.</p>
 <h2>First Start Setup</h2>
@@ -35,21 +35,15 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <li>Choose or create a plan save folder in Files. That folder becomes the default destination for saved plan files and PDFs when available.</li>
 <li>Finish setup when internet preference, privacy review, location, telescope, plan save folder setting, and language are set. You can finish later after answering the internet permission prompt.</li>
 </ul>
-<h2>Trial and Full Access</h2>
-<ul>
-<li>The free trial begins when Continue is tapped on the trial introduction and remains active for 20 days.</li>
-<li>After the trial expires, the app opens the Full Access page instead of the planner.</li>
-<li>Purchase Full Access uses Apple StoreKit and the App Store purchase sheet.</li>
-<li>If the purchase is cancelled, declined, pending, or cannot be verified, the app remains locked and returns to the Full Access page when reopened.</li>
-<li>Restore Purchase checks the current Apple Account for the verified non-consumable Full Access purchase.</li>
-<li>BigSkyAstro does not maintain a separate purchaser email or serial-number database. Apple manages purchase history and entitlement restoration.</li>
-</ul>
 <h2>Home</h2>
 <img src="Screenshots/UserGuide/Level1/01-home-iphone.png" alt="Home dashboard">
 <ul>
 <li>Home is the main dashboard.</li>
 <li>Use the action buttons to open Locations, Telescope, Targets, Planner, Weather, Set Up, and Help.</li>
-<li>The Most Likely Time card calculates the Vespera II initialize and stop-tracking window, calibrated against observed Vaonis guidance and labeled <code>± 1 minute</code>. Time entry accepts HHMM, 12-hour text such as <code>8:30 PM</code>, and 24-hour text such as <code>2030</code>.</li>
+<li>The My Telescope card shows the saved default telescope name and calculates initialize and stop-tracking times from the current phone location when available, or from the saved default location.</li>
+<li>All Vaonis smart telescopes use the calibrated Vespera II Singularity window. Unistellar, ZWO Seestar, Celestron, DWARFLAB, and unconfirmed models use their current readiness estimates.</li>
+<li>The calculated Vaonis field window is labeled <code>± 1 minute</code> because minute rounding can differ slightly by date and source.</li>
+<li>Time entry still accepts HHMM, 12-hour text such as <code>8:30 PM</code>, and 24-hour text such as <code>2030</code>.</li>
 <li>Applying the telescope time window saves the observing window used by weather and target planning, then sends you to set or confirm a location.</li>
 <li>The top Home banner is compact so the actions and bottom data card remain visible on iPhone.</li>
 <li>The interface follows the iPhone or iPad system appearance automatically; the app no longer forces a dark-only help or shell view.</li>
@@ -74,8 +68,10 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <ul>
 <li>Select the telescope you plan to use.</li>
 <li>Select compatible accessories for that telescope before saving the setup.</li>
+<li>Hestia is removed from smart telescope setup because it is a phone accessory, not a true smart telescope.</li>
 <li>Saved telescope and accessory data are used in Planner reports.</li>
 <li>The first saved or selected telescope can become the default telescope used by Home and Planner.</li>
+<li>When a telescope is saved as default, the add prompt can return directly to Home Initialization Time.</li>
 <li>Continue to Targets appears after the telescope setup is saved or restored, so the location-to-telescope-to-target flow can proceed without returning Home.</li>
 <li>When moving from Telescope to Targets, the app can restore the last saved plan or start a clean plan. Clean keeps the active location, telescope, catalog, date, and time window while clearing filters and selected targets.</li>
 <li>Restored plans are retimed against the current observing date and time window so old target selections can be checked against tonight&#x27;s sky.</li>
@@ -131,6 +127,7 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <li>Set the target start and stop time from the observation-time sheet.</li>
 <li>Start and stop values can be entered in 12-hour or 24-hour form.</li>
 <li>When you set a target's end time, that end time becomes the next target's start time in the current planner order.</li>
+<li>When several checked targets are added, the first starts at initialization and each later target starts at its own first visible time.</li>
 <li>Times after midnight are normalized to the next calendar day of the same observing night.</li>
 <li>The app checks planned target windows and blocks true overlaps.</li>
 <li>If a time conflict is found, cancel or resolve the conflicting target before the new target is committed.</li>
@@ -140,6 +137,8 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <ul>
 <li>The Planner page collects targets and observation windows into a plan.</li>
 <li>The plan is shown in start-time order.</li>
+<li>Planner auto-populates a visibility-based chain: each target ends when the next target starts, and the final target ends at the earlier of its visible card end or the observing-window end.</li>
+<li>When a target end time is edited, that end time becomes the next visible target start and cascades forward.</li>
 <li>Target cards scroll under the save and print options so the controls remain reachable.</li>
 <li>If no plan exists, the planner says no plan is currently built and links back to Plan an Observation.</li>
 </ul>
@@ -150,7 +149,7 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <li>Load Plan opens saved plans. After loading, the app shows <code>Plan Loaded</code> and asks whether to add more targets.</li>
 <li>Choose Yes to go to Targets. Choose No to stay on Planner.</li>
 <li>The loaded plan name and loaded-plan status text turn yellow so it is clear a saved plan is active.</li>
-<li>Printing uses a spreadsheet-style layout with Start, End, Alt, Az, and Mag.</li>
+<li>Printing uses a spreadsheet-style layout with Start, End, ALT, AZ, and Mag. ALT is padded to two digits for low-altitude targets.</li>
 <li>Fill Gaps suggests matching targets for open windows between scheduled planner targets, using the active filters and saved observing location.</li>
 <li>Fill Gaps includes Sample so you can preview a suggested target before adding it.</li>
 <li>Quick Ref opens a preview of the short field report with only target name, first view time, azimuth, and altitude, then exports either PDF or text.</li>
@@ -161,7 +160,9 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <li>Weather uses the default viewing location and telescope observing window when available.</li>
 <li>If My Telescope times are set, the viewing period follows that saved initialize/stop window until a saved plan takes over.</li>
 <li>The glass Date and Time Period Forecast card lists the active observing date and time range.</li>
-<li>The Sun/Moon glass card shows Sunset, Sunrise, Bortle/SQM, and time of total darkness based on the saved location.</li>
+<li>The Sun/Moon glass card shows Sunset, Sunrise, Vespera Init, Bortle/SQM, and time of total darkness based on the saved location.</li>
+<li>Vespera Init uses the same calibrated Vaonis timing policy that Home applies to Vaonis smart telescopes.</li>
+<li>Weather Setup can optionally use a Weather Underground PWS station ID for current observations while Open-Meteo fills unsupported forecast rows.</li>
 <li>Bortle/SQM is estimated from the saved latitude, longitude, elevation, and nearby population light-pressure reference used by the app.</li>
 <li>The compact Source row names the weather source and includes Update to reload the hourly data.</li>
 <li>Hourly rows list time, icon, cloud percentage, rain chance, barometric pressure with trend arrow, temperature, and dew point.</li>
@@ -174,7 +175,7 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <ul>
 <li>Set Up contains language, unit preference, internet permission, data update actions, and About This App.</li>
 <li>Internet-required actions are labeled.</li>
-<li>Target and smart telescope database updates are user-started.</li>
+<li>Target and smart telescope database updates are user-started. Target database updates warn before downloading because the dataset may be large.</li>
 <li>Target Database Update summarizes changed transients, lists their names, and shows pulled-and-stored asteroid and comet names such as Ceres and Vesta.</li>
 <li>The app keeps data on the device. Internet access is used for updates and lookups, not remote storage of app data.</li>
 <li>About This App opens controlled in-app web windows for off-site privacy, support, and reference pages.</li>
@@ -245,7 +246,7 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <ul>
 <li>Confirm at least one target is in the plan.</li>
 <li>Use Preview first to confirm the plan content.</li>
-<li>Confirm the default plan folder setting if you expect exported plans to appear in Files.</li>
+<li>Confirm the default plan folder setting if you expect exported plans or Quick Ref copies to appear in Files.</li>
 <li>Try Share Plan if the device print sheet is not available.</li>
 </ul>
 <h2>Logic Flow Export</h2>
