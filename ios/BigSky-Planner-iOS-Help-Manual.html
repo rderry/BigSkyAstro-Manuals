@@ -18,8 +18,8 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 .card { background: var(--card); border: 1px solid rgba(130,145,165,.24); border-radius: 10px; padding: 18px; }
 </style></head><body><main>
 <h1>BigSky Planner iOS User Manual</h1>
-<p class="meta">Release: 18 (build 3)</p>
-<p class="meta">Updated: 2026-07-18</p>
+<p class="meta">Release: 18 (build 4)</p>
+<p class="meta">Updated: 2026-07-19</p>
 <h2>Purpose</h2>
 <p>BigSky Planner for iPhone and iPad helps set up an observing location, choose telescope equipment and accessories, filter target catalogs, assign observation times, review weather and sky information, and export an observing plan.</p>
 <h2>First Start Setup</h2>
@@ -44,6 +44,7 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <li>All Vaonis smart telescopes use the calibrated Vespera II Singularity window. Unistellar, ZWO Seestar, Celestron, DWARFLAB, and unconfirmed models use their current readiness estimates.</li>
 <li>The calculated Vaonis field window is labeled <code>± 1 minute</code> because minute rounding can differ slightly by date and source.</li>
 <li>Time entry still accepts HHMM, 12-hour text such as <code>8:30 PM</code>, and 24-hour text such as <code>2030</code>.</li>
+<li>When a current plan exists, changing the observing date from Home or Weather shows one confirmation that can save and clear the current plan, clear without saving, or cancel and keep the current plan.</li>
 <li>Applying the telescope time window saves the observing window used by weather and target planning, then sends you to set or confirm a location.</li>
 <li>The top Home banner is compact so the actions and bottom data card remain visible on iPhone.</li>
 <li>The interface follows the iPhone or iPad system appearance automatically; the app no longer forces a dark-only help or shell view.</li>
@@ -160,6 +161,7 @@ img { display: block; max-width: min(100%, 430px); max-height: 760px; object-fit
 <li>Weather uses the default viewing location and telescope observing window when available.</li>
 <li>If My Telescope times are set, the viewing period follows that saved initialize/stop window until a saved plan takes over.</li>
 <li>The glass Date and Time Period Forecast card lists the active observing date and time range.</li>
+<li>Changing the observing date from Weather uses the same one-step plan-clear confirmation as Home.</li>
 <li>The Sun/Moon glass card shows Sunset, Sunrise, Vespera Init, Bortle/SQM, and time of total darkness based on the saved location.</li>
 <li>Vespera Init uses the same calibrated Vaonis timing policy that Home applies to Vaonis smart telescopes.</li>
 <li>Weather Setup can optionally use a Weather Underground PWS station ID for current observations while Open-Meteo fills unsupported forecast rows.</li>
